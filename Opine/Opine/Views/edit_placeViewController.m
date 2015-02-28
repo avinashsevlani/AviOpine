@@ -172,6 +172,9 @@
     txt_address.text = [self get_my_proper_string1:[_dic_response objectForKey:@"Pla_Address"]];
     txt_zip.text =  [self get_my_proper_string1:[_dic_response objectForKey:@"Pla_Zip"]];
     txt_city.text = [self get_my_proper_string1:[_dic_response objectForKey:@"Pla_City"]];
+    txt_polling1.text = [self get_my_proper_string1:[_dic_response objectForKey:@"Pla_Que1"]];
+    txt_polling2.text = [self get_my_proper_string1:[_dic_response objectForKey:@"Pla_Que2"]];
+    txtv_add_message.text = [self get_my_proper_string1:[_dic_response objectForKey:@"Pla_Message"]];
     //txt_state.text = [self get_my_proper_string1:[_dic_response objectForKey:@"State"]];
 }
 

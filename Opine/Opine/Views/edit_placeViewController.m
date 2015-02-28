@@ -8,6 +8,8 @@
 
 #import "edit_placeViewController.h"
 #import "Utility_Class.h"
+#import "MBProgressHUD.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @interface edit_placeViewController ()
 {
@@ -47,6 +49,7 @@
     NSDictionary *dic_state,*dic_details;
     
     NSMutableArray *arry_key,*arry_value;
+    NSData *dataImage;
 }
 @end
 
@@ -181,6 +184,15 @@
     return str_value;
 }
 
+-(NSString *) getCurrentDate {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"ddMMYYYY_hhmmss";
+    NSDate *date = [[NSDate alloc] init];
+    NSString *ret = [formatter stringFromDate:date];
+    return ret;
+}
+
+
 //New Code
 - (IBAction)btn_save_action:(id)sender
 {
@@ -190,8 +202,10 @@
     }
     else
     {
-        //[self updating_detail_service];
-        NSDictionary *dic = @{ @"place_id" :[NSString stringWithFormat:@"%d",_str_place_id],
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        NSDictionary *params = @{ @"place_id" :[NSString stringWithFormat:@"%d",_str_place_id],
                                @"que1"    : txt_polling1.text,
                                @"que2"        :txt_polling2.text,
                                @"zipcode"        :txt_zip.text,
@@ -200,18 +214,71 @@
                                @"city"        :txt_city.text,
                                @"address"        :txt_address.text,
                                @"title"        :txt_place_name.text,
-                                           };
-        NSString *str_url = @"http://www.opine.com.br/OpineAPI/api/place/edit?";
-        // Post Service
-       dic  = [Utility_Class Request_service_get_response_in_Post:dic :str_url];
-       if([@"1" isEqualToString:[dic valueForKeyPath:@"Success"]])
-       {
-           [[[UIAlertView alloc]initWithTitle:@"Success" message:[dic valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
-       }
-       else
-       {
-          [[[UIAlertView alloc]initWithTitle:@"Failed" message:[dic valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
-       }
+                               };
+
+        
+//        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:objAppDelegate.userSessionID, @"Usr_SessionID", [txtName text], @"Usr_FirstName", @"", @"Usr_Password", nil];
+        AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://server.url"]];
+        [manager.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        AFHTTPRequestOperation *op = [manager POST:@"http://www.opine.com.br/OpineAPI/api/place/edit"
+                                        parameters:params
+                         constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                             if (dataImage)
+                             {
+                                 [formData appendPartWithFileData:dataImage name:@"logo" fileName:[NSString stringWithFormat:@"Photo_%@.png", [self getCurrentDate]] mimeType:@"image/png"];
+                             }
+                             
+                         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                             NSLog(@"dataUpdateForUser responseObject = %@", [NSString stringWithUTF8String:[responseObject bytes]]);
+                             NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+                             
+                            
+                             if([@"1" isEqualToString:[dictTemp valueForKeyPath:@"Success"]])
+                             {
+                                 [[[UIAlertView alloc]initWithTitle:@"Success" message:[dictTemp valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+                             }
+                             else
+                             {
+                                 [[[UIAlertView alloc]initWithTitle:@"Failed" message:[dictTemp valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+                             }
+
+                             
+                
+                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                             
+                         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                             NSLog(@"dataUpdateForUser fail : %@",[error localizedDescription]);
+                             [[[UIAlertView alloc]initWithTitle:@"Failed" message:[error localizedDescription] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+
+                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                         }];
+        [op start];
+
+        
+        
+//        //[self updating_detail_service];
+//        NSDictionary *dic = @{ @"place_id" :[NSString stringWithFormat:@"%d",_str_place_id],
+//                               @"que1"    : txt_polling1.text,
+//                               @"que2"        :txt_polling2.text,
+//                               @"zipcode"        :txt_zip.text,
+//                               @"message"        :txtv_add_message.text,
+//                               @"state"        : str_state,
+//                               @"city"        :txt_city.text,
+//                               @"address"        :txt_address.text,
+//                               @"title"        :txt_place_name.text,
+//                                           };
+//        NSString *str_url = @"http://www.opine.com.br/OpineAPI/api/place/edit?";
+//        // Post Service
+//       dic  = [Utility_Class Request_service_get_response_in_Post:dic :str_url];
+//       if([@"1" isEqualToString:[dic valueForKeyPath:@"Success"]])
+//       {
+//           [[[UIAlertView alloc]initWithTitle:@"Success" message:[dic valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+//       }
+//       else
+//       {
+//          [[[UIAlertView alloc]initWithTitle:@"Failed" message:[dic valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+//       }
     }
     
 }
@@ -392,6 +459,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    dataImage = UIImagePNGRepresentation(originalImage);
     img_profile.image = originalImage;
     
     [picker dismissViewControllerAnimated:YES completion:nil];

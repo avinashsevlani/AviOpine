@@ -147,7 +147,7 @@
 }
 -(void) show_image
 {
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", [_dic_response objectForKey:@"Image"]]]];
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", [_dic_response objectForKey:@"Pla_Image"]]]];
     if (data)
     {
         img_place.image = [UIImage imageWithData:data];
@@ -163,15 +163,15 @@
 
 -(void) set_values
 {
-    lbl_place_address.text = [NSString stringWithFormat:@"%@",[self get_my_proper_string1:[_dic_response objectForKey:@"Place_name"]]];
-    lbl_place_description.text = [NSString stringWithFormat:@"%@",[self get_my_proper_string1:[_dic_response objectForKey:@"Address"]]];
-    lbl_place_frate.text = [NSString stringWithFormat:@"%@",[self get_my_proper_string1:[_dic_response objectForKey:@"Avg_Rating"]]];
+    lbl_place_address.text = [NSString stringWithFormat:@"%@",[self get_my_proper_string1:[_dic_response objectForKey:@"Pla_Name"]]];
+    lbl_place_description.text = [NSString stringWithFormat:@"%@",[self get_my_proper_string1:[_dic_response objectForKey:@"Pla_Address"]]];
+    lbl_place_frate.text = [NSString stringWithFormat:@"%@",[self get_my_proper_string1:[_dic_response objectForKey:@"Rating"]]];
     lbl_place_frate.text = [NSString stringWithFormat:@"%.2f", [lbl_place_frate.text floatValue]];
     
-    txt_place_name.text =  [self get_my_proper_string1:[_dic_response objectForKey:@"Place_name"]];
-    txt_address.text = [self get_my_proper_string1:[_dic_response objectForKey:@"Address"]];
-    txt_zip.text =  [self get_my_proper_string1:[_dic_response objectForKey:@"Zip"]];
-    txt_city.text = [self get_my_proper_string1:[_dic_response objectForKey:@"City"]];
+    txt_place_name.text =  [self get_my_proper_string1:[_dic_response objectForKey:@"Pla_Name"]];
+    txt_address.text = [self get_my_proper_string1:[_dic_response objectForKey:@"Pla_Address"]];
+    txt_zip.text =  [self get_my_proper_string1:[_dic_response objectForKey:@"Pla_Zip"]];
+    txt_city.text = [self get_my_proper_string1:[_dic_response objectForKey:@"Pla_City"]];
     //txt_state.text = [self get_my_proper_string1:[_dic_response objectForKey:@"State"]];
 }
 

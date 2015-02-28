@@ -27,7 +27,7 @@
     
     
     IBOutlet UIButton *btn_shorting;
-    NSDictionary *dic,*dic1;
+    NSDictionary *dic;
     
     IBOutlet UIActivityIndicatorView *activity_indicator;
     
@@ -83,7 +83,7 @@
 }
 -(void) fecthing_places
 {
-     dic1 =  [self webservice_to_save_claim : @"http://opine.com.br/OpineAPI/application/controllers/api/placeid.php?user_id=%@&type=1" : nil];
+    // dic1 =  [self webservice_to_save_claim : @"http://opine.com.br/OpineAPI/application/controllers/api/placeid.php?user_id=%@&type=1" : nil];
     
 //    http://opine.com.br/OpineAPI/api/myplace/list?user_id=8gabmws4yki7h613x9fru
     
@@ -309,7 +309,7 @@
     edit_placeViewController *controller;
     
     controller = [[edit_placeViewController alloc] initWithNibName:@"edit_placeViewController" bundle:nil];
-    NSDictionary *dic11 = [[dic1 valueForKeyPath:@"response.Message"] objectAtIndex:button.tag];
+    NSDictionary *dic11 = [[dic valueForKeyPath:@"MyPlaces"] objectAtIndex:button.tag];
     controller.dic_response = dic11;
     controller.str_place_id =[[self get_my_proper_string:[dic valueForKeyPath:@"MyPlaces.Pla_Id"] [button.tag]] intValue];
     [self presentViewController:controller animated:YES completion:nil];
@@ -329,11 +329,11 @@
     NSLog(@"%@ %@", comment_array, comment_name_arr);
     [tbl_places reloadData];*/
     
-    NSDictionary *dic11 = [[dic1 valueForKeyPath:@"response.Message"] objectAtIndex:indexPath.row];
+   // NSDictionary *dic11 = [[dic1 valueForKeyPath:@"response.Message"] objectAtIndex:indexPath.row];
     
     place_detail_view *controller;
     controller = [[place_detail_view alloc] initWithNibName:@"place_detail_view" bundle:nil];
-    controller.dic_details = dic11;
+  //  controller.dic_details = dic11;
      controller.str_place_id =[self get_my_proper_string:[dic valueForKeyPath:@"MyPlaces.Pla_Id"] [indexPath.row]];
     [self presentViewController:controller animated:YES completion:nil];
     

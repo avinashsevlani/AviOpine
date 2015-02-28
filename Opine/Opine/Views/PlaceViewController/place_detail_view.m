@@ -43,6 +43,7 @@
     
     IBOutlet UITextView *txtv_ans_address;
     IBOutlet UILabel *lbl_pagecount;
+    NSString* imageUrl;
 }
 @end
 
@@ -71,9 +72,7 @@
     total_comment_reply = [NSMutableArray new];
     total_comment_tittle = [NSMutableArray new];
     
-    lbl_place_tittle.text = [NSString stringWithFormat:@"%@",[_dic_details objectForKey:@"Place_name"]];
-    lbl_place_Address.text = [NSString stringWithFormat:@"%@",[_dic_details objectForKey:@"Address"]];
-    lbl_rating.text =[NSString stringWithFormat:@"%.2f",[[_dic_details objectForKey:@"Avg_Rating"] floatValue]];
+    
 
     [self performSelector:@selector(get_data_from_service) withObject:nil afterDelay:0.2f];
     
@@ -86,7 +85,7 @@
     
     //    _dic_details
     [self change_framesizes];
-    [self performSelectorInBackground:@selector(show_image) withObject:nil];
+    
 }
 
 -(void) get_data_from_service
@@ -97,6 +96,14 @@
     NSString *str_url = @"http://opine.com.br/OpineAPI/api/myplace/detail?"; //
     // Post Service
    _dic_details  = [Utility_Class Request_service_get_response_in_Post:dic_data :str_url];
+    
+    NSDictionary* placeDetails = [[[_dic_details objectForKey:@"PlaceDetails"]objectForKey:@"Details"] objectAtIndex:0];
+    lbl_place_tittle.text = [NSString stringWithFormat:@"%@",[placeDetails objectForKey:@"Pla_Name"]];
+    lbl_place_Address.text = [NSString stringWithFormat:@"%@",[placeDetails objectForKey:@"Pla_Address"]];
+    lbl_rating.text =[NSString stringWithFormat:@"%.2f",[[placeDetails objectForKey:@"Rating"] floatValue]];
+    
+    imageUrl = [placeDetails objectForKey:@"Pla_Image"];
+    [self performSelectorInBackground:@selector(show_image) withObject:nil];
     
     [self splitting_array];
     
@@ -162,10 +169,18 @@
 }
 -(void) show_image
 {
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", [_dic_details objectForKey:@"Image"]]]];
-    if (data)
+    if (imageUrl)
     {
-        img_place.image = [UIImage imageWithData:data];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", imageUrl]]];
+        if (data)
+        {
+            img_place.image = [UIImage imageWithData:data];
+        }
+        else
+        {
+            img_place.image = [UIImage imageNamed:@"myImage.jpg"];
+        }
+
     }
     else
     {

@@ -560,8 +560,22 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
         cell.btn_readmore.tag=indexPath.row;
         [cell.btn_readmore addTarget:self action:@selector(readmoreAction:) forControlEvents:UIControlEventTouchUpInside];
         
+       
+
+        
+        
         cell.btn_reply.tag=indexPath.row;
         [cell.btn_reply addTarget:self action:@selector(replyAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        NSString* replyText = [NSString stringWithFormat:@"%@",element[@"Com_Reply"]];
+        if (replyText.length > 0)
+        {
+            cell.btn_reply.hidden = NO;
+        }
+        else
+        {
+            cell.btn_reply.hidden = YES;
+        }
         return cell;
     }
 }

@@ -326,8 +326,12 @@
         if (cell == nil)
         {
             cell=(place_detail_Cell *)[[[NSBundle mainBundle] loadNibNamed:@"place_detail_Cell" owner:self options:nil]objectAtIndex:0];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        cell.backgroundColor = [UIColor colorWithRed:120/255.0f green:214/255.0f blue:216/255.0f alpha:1.0f];
+       // cell.backgroundColor = [UIColor colorWithRed:120/255.0f green:214/255.0f blue:216/255.0f alpha:1.0f];
+        cell.backgroundColor = [UIColor clearColor];
+        cell.layer.borderWidth = 1.0;
+        cell.layer.borderColor = [UIColor whiteColor].CGColor;
         DYRateView *rv = [[DYRateView alloc] initWithFrame:CGRectMake(8, 38, 200, 30)];
         rv.rate = 5;
         rv.delegate = self;

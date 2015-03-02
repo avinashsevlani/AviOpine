@@ -9,6 +9,9 @@
 #import "My_place_reportViewController.h"
 #import "AppDelegate.h"
 #import "comment_count_Cell.h"
+#import "RatingListTableViewCell.h"
+#import "CommantTableViewCell.h"
+#import "UIImageView+WebCache.h"
 
 @interface My_place_reportViewController ()
 {
@@ -25,7 +28,11 @@
     IBOutlet UIImageView *img_chart;
     IBOutlet UIScrollView *scroll_crap;
     IBOutlet UIWebView *webview;
+    UITableView* tableRatingView;
+    NSMutableArray *commentRatingArray;
 }
+
+
 @end
 
 @implementation My_place_reportViewController
@@ -52,10 +59,29 @@
     isfrom_comment = YES;
     
     
-    [tbl_comment setBackgroundColor:[UIColor colorWithRed:140/255.0f green:221/255.0f blue:223/255.0f alpha:1]];
+    [tbl_comment setBackgroundColor:[UIColor colorWithRed:42.0/255.0 green:176.0/255.0 blue:182.0/255.0 alpha:1.0]];
     
+    UINib *nib = [UINib nibWithNibName:@"CommantTableViewCell" bundle:nil];
+    [tableRatingView registerNib:nib forCellReuseIdentifier:@"RatingListTableViewCellRUI"];
     // webview.scalesPageToFit = NO;
     // [webview stringByEvaluatingJavaScriptFromString:@"document. body.style.zoom = 5.0;"];
+}
+
+
+- (void)initializeRatingTableView
+{
+    tbl_comment.tableHeaderView = nil;
+    tableRatingView = nil;
+    tableRatingView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40 * (commentRatingArray.count -1))];
+    UINib *nib = [UINib nibWithNibName:@"RatingListTableViewCell" bundle:nil];
+    [tableRatingView registerNib:nib forCellReuseIdentifier:@"RatingListTableViewCellRUI"];
+    tableRatingView.delegate = self;
+    tableRatingView.dataSource = self;
+    tableRatingView.scrollEnabled=false;
+    tableRatingView.separatorStyle= UITableViewCellSeparatorStyleNone;
+    tableRatingView.backgroundColor=[UIColor colorWithRed:42.0/255.0 green:176.0/255.0 blue:182.0/255.0 alpha:1.0];
+    tbl_comment.tableHeaderView = tableRatingView;
+
 }
 
 - (IBAction)action:(id)sender
@@ -126,6 +152,7 @@
     {
         lbl_comment_count.text = [NSString stringWithFormat:@"%d", [[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Comment"] count]];
         lbl_rate_count.text = [NSString stringWithFormat:@"%d",  [[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Comment"] count]];
+        commentRatingArray = [dic_response valueForKeyPath:@"Place.CommentRating"];
     }
     else
     {
@@ -133,6 +160,7 @@
         [alertr show];
     }
     
+    [self initializeRatingTableView];
     [tbl_comment reloadData];
 }
 -(void) webservice_load_webview : (NSString *) str_type
@@ -185,48 +213,123 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Comment"] count];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 80;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"cell";
-    comment_count_Cell *cell =(comment_count_Cell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
-    if (cell == nil)
+    if (tableView == tableRatingView)
     {
-        cell=(comment_count_Cell *)[[[NSBundle mainBundle] loadNibNamed:@"comment_count_Cell" owner:self options:nil]objectAtIndex:0];
-    }
-    cell.backgroundColor = [UIColor colorWithRed:120/255.0f green:214/255.0f blue:216/255.0f alpha:1.0f];
-    if (indexPath.row % 2 == 0)
-    {
-        [cell.contentView setBackgroundColor:[UIColor colorWithRed:60/255.0f green:193/255.0f blue:200/255.0f alpha:1]];
-        [cell.textLabel setBackgroundColor:[UIColor colorWithRed:60/255.0f green:193/255.0f blue:200/255.0f alpha:1]];
-        [cell.textLabel setTextColor:[UIColor whiteColor]];
-        
-        cell.lbl_place_tittle.textColor = [UIColor whiteColor];
-        cell.lbl_place_date.textColor = [UIColor whiteColor];
-        cell.lbl_place_comment.textColor = [UIColor whiteColor];
+        return (commentRatingArray.count - 1);
     }
     else
     {
-        [cell.textLabel setBackgroundColor:[UIColor colorWithRed:140/255.0f green:221/255.0f blue:223/255.0f alpha:1]];
-        [cell.contentView setBackgroundColor:[UIColor colorWithRed:140/255.0f green:221/255.0f blue:223/255.0f alpha:1]];
-        
-        
-        cell.lbl_place_tittle.textColor = [UIColor blackColor];
-        cell.lbl_place_date.textColor = [UIColor blackColor];
-        cell.lbl_place_comment.textColor = [UIColor blackColor];
+        return [[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Comment"] count];
     }
+    
 
     
-    cell.lbl_place_tittle.text = [NSString stringWithFormat:@"%@",[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Title"] [indexPath.row]];
-    cell.lbl_place_comment.text =  [NSString stringWithFormat:@"%@",[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Comment"] [indexPath.row]];
-    cell.lbl_place_date.text =  [NSString stringWithFormat:@"%@",[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Date"] [indexPath.row]];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == tableRatingView)
+    {
+        return 40;
+    }
+    else
+        return 140;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == tableRatingView)
+    {
+        RatingListTableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"RatingListTableViewCellRUI"];
+        if (cell == nil) {
+            // Load the top-level objects from the custom cell XIB.
+            NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"RatingListTableViewCell" owner:nil options:nil];
+            // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+            cell = [topLevelObjects objectAtIndex:0];
+        }
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        cell.layer.borderColor=[UIColor whiteColor].CGColor;
+        cell.layer.borderWidth=1;
+        cell.backgroundColor=[UIColor clearColor];
+        
+
+        cell.view_rating.rate = [[[commentRatingArray objectAtIndex:indexPath.row] valueForKey:@"Rate"]floatValue];
+        cell.view_rating.alignment = RateViewAlignmentLeft;
+        //cell.view_rating.delegate = self;
+        cell.view_rating.editable = NO;
+        
+        cell.lbl_commandtitle.text = [[commentRatingArray objectAtIndex:indexPath.row] valueForKey:@"Name"];
+        cell.lbl_percentage.text = [[commentRatingArray objectAtIndex:indexPath.row] valueForKey:@"Rate"];
+        
+        NSLog(@"%@", objPlaceDetail.placeCommentRatingArray);
+        cell.lbl_percentage.tag = [[[commentRatingArray objectAtIndex:indexPath.row] valueForKey:@"Id"] integerValue];
+        cell.view_rating.tag = [[[commentRatingArray objectAtIndex:indexPath.row] valueForKey:@"Id"] integerValue];
+        cell.tag = [[[commentRatingArray objectAtIndex:indexPath.row] valueForKey:@"Id"] integerValue];
+        return cell;
+
+    }
+    else
+    {
+        CommantTableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"CommantTableViewCellRUI"];
+        if (cell == nil) {
+            // Load the top-level objects from the custom cell XIB.
+            NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"CommantTableViewCell" owner:nil options:nil];
+            // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+            cell = [topLevelObjects objectAtIndex:0];
+        }
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        cell.layer.borderColor=[UIColor whiteColor].CGColor;
+        cell.layer.borderWidth=1;
+        cell.backgroundColor=[UIColor clearColor];
+        
+        NSDictionary* element = [[dic_response valueForKeyPath:@"Comments"] objectAtIndex:indexPath.row];
+        
+//        cell.lbl_place_tittle.text = [NSString stringWithFormat:@"%@",[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Title"] [indexPath.row]];
+//        cell.lbl_place_comment.text =  [NSString stringWithFormat:@"%@",[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Comment"] [indexPath.row]];
+//        cell.lbl_place_date.text =  [NSString stringWithFormat:@"%@",[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Date"] [indexPath.row]];
+        
     
-    return cell;
+        
+    
+        cell.view_rate.rate = [[element valueForKey:@"Rate"] doubleValue];
+        cell.view_rate.alignment = RateViewAlignmentLeft;
+        cell.view_rate.delegate = nil;
+        
+        cell.lbl_username.text = [element valueForKey:@"Com_Name"];
+        cell.lbl_date.text = [element valueForKey:@"Com_Date"];
+        cell.lbl_commandTitle.text = [element valueForKey:@"Com_Title"];
+        cell.lbl_Command.text = [element valueForKey:@"Com_Comment"]; //@"dstgew weht ehwit hwtesytywetyweutyouw ytuy wuty wyuyewu yeuwytuy uweytuy ";//
+        
+        NSURL *url = [NSURL URLWithString:[[element valueForKey:@"Com_Name_Image"] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+        [cell.img_userphoto setImageWithURL:url placeholderImage:[UIImage imageNamed:@"imagenotfound.png"]];
+        
+        
+//        cell.btn_readmore.hidden=([[element valueForKey:@"Com_Comment"] length]<35);
+//        cell.btn_readmore.tag=indexPath.row;
+//        [cell.btn_readmore addTarget:self action:@selector(readmoreAction:) forControlEvents:UIControlEventTouchUpInside];
+//        
+        
+        cell.btn_readmore.hidden = YES;
+        cell.btn_reply.hidden = YES;
+        
+//        cell.btn_reply.tag=indexPath.row;
+//        [cell.btn_reply addTarget:self action:@selector(replyAction:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        NSString* replyText = [NSString stringWithFormat:@"%@",element[@"Com_Reply"]];
+//        if (replyText.length > 0)
+//        {
+//            cell.btn_reply.hidden = NO;
+//        }
+//        else
+//        {
+//            cell.btn_reply.hidden = YES;
+//        }
+//        return cell;
+        
+        
+       
+        
+        return cell;
+
+    }
 }
 
 - (IBAction)btn_back_action:(id)sender

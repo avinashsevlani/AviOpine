@@ -300,7 +300,13 @@
               if ([[dictTemp valueForKey:@"Message"] isEqualToString:@"Success"]) {
                   vwLogin.hidden = NO;
                   btnSubmit.hidden = YES;
-              } else {
+                  if ([dictTemp valueForKey:@"MessageInfo"])
+                  {
+                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[dictTemp valueForKey:@"MessageInfo"] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                      [alert show];
+
+                  }
+                } else {
                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please choose another Email. This email already Register." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
                   [alert show];
               }

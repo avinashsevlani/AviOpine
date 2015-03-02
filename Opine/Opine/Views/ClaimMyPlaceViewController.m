@@ -830,16 +830,29 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
     objRateCommentModel.commentTitle = [_txt_command_title text];
     objRateCommentModel.commentText = [_txt_commentDescription text];
     objRateCommentModel.commentPlaceID = [NSString stringWithFormat:@"%d", placeID];
-    for (int i=marrRatingStore.count-1; i>=0; i--) {
-        for (int j=i-1; j>=0; j--) {
-            NSString *f = [[marrRatingStore objectAtIndex:i] valueForKey:@"rate"];
-            NSString *first = [f substringToIndex:5];
+    
+    
+    NSMutableArray * tempArray = [[NSMutableArray alloc]initWithArray:marrRatingStore];
+    [marrRatingStore removeAllObjects];
+    
+    for (int i=tempArray.count-1; i>=0; i--)
+    {
+        BOOL ispresent = NO;
+        for (int j=marrRatingStore.count-1; j>=0; j--)
+        {
+            NSString *f = [[tempArray objectAtIndex:i] valueForKey:@"rate"];
+            NSString *first = [[f componentsSeparatedByString:@":"] objectAtIndex:0];
             NSString *s = [[marrRatingStore objectAtIndex:j] valueForKey:@"rate"];
-            NSString *sec = [s substringToIndex:5];
-            if ([first isEqual:sec]) {
-                [marrRatingStore removeObjectAtIndex:j];
+            NSString *sec = [[s componentsSeparatedByString:@":"] objectAtIndex:0];
+            if ([first isEqual:sec])
+            {
+                ispresent = YES;
                 break;
             }
+        }
+        if (!ispresent)
+        {
+            [marrRatingStore addObject:[tempArray objectAtIndex:i]];
         }
     }
     [self storeRateAndComment];
@@ -871,7 +884,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:objRateCommentModel.commentUserSessionID, @"Com_SessionID", objRateCommentModel.commentTitle, @"Com_Title", objRateCommentModel.commentText, @"Com_Comment", [NSString stringWithFormat:@"%d", placeID], @"Com_PlaceID", objRateCommentModel.commentRepeat, @"Com_Repeat", mstrRating, @"Com_Rating", nil];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:objRateCommentModel.commentUserSessionID, @"Com_SessionID", objRateCommentModel.commentTitle, @"Com_Title", objRateCommentModel.commentText, @"Com_Comment", [NSString stringWithFormat:@"%d", placeID], @"Com_PlaceID",mstrRating, @"Com_Rating", objRateCommentModel.commentRepeat, @"Com_Repeat", nil];
     [manager POST:[NSString stringWithFormat:@"http://www.opine.com.br/OpineAPI/api/comment/add"]
        parameters:params
           success:^(AFHTTPRequestOperation *operation, id responseObject) {

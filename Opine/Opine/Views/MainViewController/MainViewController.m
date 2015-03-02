@@ -129,9 +129,14 @@ bool isPlaceByCategoryDone = NO;
     imgLogin.hidden = YES;
     btnLogin.tag = 1;
     marrSettingItem = nil;
-    if (objAppDelegate.ispaid_user)
+    if (objAppDelegate.isLogin)
     {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places",@"About US", nil];
+        if (objAppDelegate.ispaid_user) {
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
+        } else {
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"About US", nil];
+        }
+        
     }
     else
     {
@@ -295,9 +300,17 @@ bool isPlaceByCategoryDone = NO;
 - (IBAction)btnSettingTapped:(id)sender
 {
     marrSettingItem = nil;
-    if (objAppDelegate.ispaid_user) {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places",@"About US", nil];
-    } else {
+    if (objAppDelegate.isLogin)
+    {
+        if (objAppDelegate.ispaid_user) {
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
+        } else {
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"About US", nil];
+        }
+        
+    }
+    else
+    {
         marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"About US", nil];
     }
     [(SettingViewController *)self.slidingViewController.underLeftViewController setMarrSetting:marrSettingItem];
@@ -315,10 +328,18 @@ bool isPlaceByCategoryDone = NO;
     objAppDelegate = [[UIApplication sharedApplication] delegate];
     objAppDelegate.marrCategory = [[NSMutableArray alloc] init];
     objAppDelegate.marrPlace = [[NSMutableArray alloc] init];
-    if (objAppDelegate.ispaid_user) {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
-    } else {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"About US", nil];
+    if (objAppDelegate.isLogin)
+    {
+        if (objAppDelegate.ispaid_user) {
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
+        } else {
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"About US", nil];
+        }
+
+    }
+    else
+    {
+         marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"About US", nil];
     }
 }
 
@@ -375,11 +396,20 @@ bool isPlaceByCategoryDone = NO;
             objAppDelegate.isLogin = NO;
             imgLogin.hidden = NO;
             marrSettingItem = nil;
-            if (objAppDelegate.ispaid_user) {
-                marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile", @"My Places", @"About US", nil];
-            } else {
+            if (objAppDelegate.isLogin)
+            {
+                if (objAppDelegate.ispaid_user) {
+                    marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
+                } else {
+                    marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"About US", nil];
+                }
+                
+            }
+            else
+            {
                 marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"About US", nil];
             }
+
             [(SettingViewController *)self.slidingViewController.underLeftViewController setMarrSetting:marrSettingItem];
             [[FBSession activeSession] closeAndClearTokenInformation];
             return NO;

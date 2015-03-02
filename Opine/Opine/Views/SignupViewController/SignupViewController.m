@@ -263,13 +263,13 @@
               [objAppDelegate.marrUserData addObject:objUser];
               objAppDelegate.userSessionID = [dictTemp valueForKey:@"Usr_SessionID"];
               objAppDelegate.isLogin = YES;
-              if ([[dictTemp valueForKey:@"Usr_PaymentStatus"] isEqualToString:@"Free"])
+              if ([[dictTemp valueForKey:@"Usr_PaymentStatus"] isEqualToString:@"Paid"])
               {
                   objAppDelegate.ispaid_user = YES;
               }
               else
               {
-                  objAppDelegate.ispaid_user = YES;
+                  objAppDelegate.ispaid_user = NO;
               }
               
               objAppDelegate.UserName = [txtUserName text];

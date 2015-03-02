@@ -129,8 +129,15 @@
     objAppDelegate.marrPlace = [[NSMutableArray alloc] init];
     if (objAppDelegate.isLogin)
     {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places",@"About US", nil];
-    } else {
+        if (objAppDelegate.ispaid_user) {
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
+        } else {
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"About US", nil];
+        }
+        
+    }
+    else
+    {
         marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"About US", nil];
     }
 }

@@ -350,7 +350,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
     _view_claim.layer.frame = tabelViewFrame;
     
     tabelViewFrame = _view_closeSaveSahre.layer.frame;
-    tabelViewFrame.origin.y =  _view_claim.layer.frame.origin.y + _view_claim.layer.frame.size.height;
+    tabelViewFrame.origin.y =  _txt_commentDescription.layer.frame.origin.y + _txt_commentDescription.layer.frame.size.height;
     _view_closeSaveSahre.layer.frame = tabelViewFrame;
     
     

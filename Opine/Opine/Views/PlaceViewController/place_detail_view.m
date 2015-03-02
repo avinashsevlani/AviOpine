@@ -99,7 +99,7 @@
     
     NSDictionary* placeDetails = [[[_dic_details objectForKey:@"PlaceDetails"]objectForKey:@"Details"] objectAtIndex:0];
     lbl_place_tittle.text = [NSString stringWithFormat:@"%@",[placeDetails objectForKey:@"Pla_Name"]];
-    lbl_place_Address.text = [NSString stringWithFormat:@"%@",[placeDetails objectForKey:@"Pla_Address"]];
+    lbl_place_Address.text = [NSString stringWithFormat:@"%@",[placeDetails objectForKey:@"Pla_FullAddress"]];
     lbl_rating.text =[NSString stringWithFormat:@"%.2f",[[placeDetails objectForKey:@"Rating"] floatValue]];
     
     imageUrl = [placeDetails objectForKey:@"Pla_Image"];

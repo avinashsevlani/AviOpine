@@ -93,7 +93,7 @@
     NSString *str =[NSString stringWithFormat:@"%@", [dic valueForKeyPath:@"Success"]];
     if ([str isEqualToString:@"1"])
     {
-        address_array = [dic valueForKeyPath:@"MyPlaces.Pla_Address"];
+        address_array = [dic valueForKeyPath:@"MyPlaces.Pla_FullAddress"];
         NSLog(@"%@", address_array);
         place_array = [dic valueForKeyPath:@"MyPlaces.Pla_Name"];
         arr_avg_rating = [dic valueForKeyPath:@"MyPlaces.Rating"];

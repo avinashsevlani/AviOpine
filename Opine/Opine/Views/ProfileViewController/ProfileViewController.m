@@ -167,7 +167,11 @@ NSData *dataImage;
     AFHTTPRequestOperation *op = [manager POST:@"http://www.opine.com.br/OpineAPI/api/user/profile"
                                     parameters:params
                      constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-                         [formData appendPartWithFileData:dataImage name:@"Usr_Photo" fileName:[NSString stringWithFormat:@"Photo_%@.png", [self getCurrentDate]] mimeType:@"image/png"];
+                         if (dataImage)
+                         {
+                              [formData appendPartWithFileData:dataImage name:@"Usr_Photo" fileName:[NSString stringWithFormat:@"Photo_%@.png", [self getCurrentDate]] mimeType:@"image/png"];
+                         }
+                        
                      } success:^(AFHTTPRequestOperation *operation, id responseObject) {
                          NSLog(@"dataUpdateForUser responseObject = %@", [NSString stringWithUTF8String:[responseObject bytes]]);
                          NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];

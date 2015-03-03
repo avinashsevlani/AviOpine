@@ -10,8 +10,14 @@
 #import "Utility_Class.h"
 #import "PlaceDetailModel.h"
 #import "AppDelegate.h"
+#import <StoreKit/StoreKit.h>
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
 
-@interface Claim_form_ViewController ()
+
+#define productID @"com.opineYearSubscription.yearly"
+
+@interface Claim_form_ViewController ()<SKProductsRequestDelegate>
 {
     
     IBOutlet UILabel *lbl_cliam_tittle;
@@ -37,6 +43,9 @@
     
     AppDelegate *Obj_Appdelegate;
     
+    SKProductsRequest* productsRequest;
+    NSArray* validProducts;
+    NSString* uniqueID;
     
     IBOutlet UIScrollView *scro_view_details;
 
@@ -47,6 +56,140 @@
 @implementation Claim_form_ViewController
 @synthesize user_login_detail;
 
+///////////////// In app purchase implementation
+
+-(void)fetchAvailableProducts{
+    
+    NSSet *productIdentifiers = [NSSet
+                                 setWithObjects:productID,nil];
+    productsRequest = [[SKProductsRequest alloc]
+                       initWithProductIdentifiers:productIdentifiers];
+    productsRequest.delegate = self;
+    [productsRequest start];
+}
+
+- (BOOL)canMakePurchases
+{
+    return [SKPaymentQueue canMakePayments];
+}
+
+- (void)purchaseMyProduct:(SKProduct*)product{
+    if ([self canMakePurchases]) {
+        SKPayment *payment = [SKPayment paymentWithProduct:product];
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+        [[SKPaymentQueue defaultQueue] addPayment:payment];
+    }
+    else{
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
+                                  @"Purchases are disabled in your device" message:nil delegate:
+                                  self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alertView show];
+    }
+}
+
+
+#pragma mark StoreKit Delegate
+
+
+-(void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
+    for (SKPaymentTransaction *transaction in transactions) {
+        UIAlertView * alertView;
+        switch (transaction.transactionState) {
+            case SKPaymentTransactionStatePurchasing:
+                NSLog(@"Purchasing");
+                break;
+            case SKPaymentTransactionStatePurchased:
+                if ([transaction.payment.productIdentifier
+                     isEqualToString:productID]) {
+                    NSLog(@"Purchased ");
+                    [self registerPlace];
+                   // [self addPurchaseBookToServer];
+                    
+                }
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                               break;
+            case SKPaymentTransactionStateRestored:
+                NSLog(@"Restored ");
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+//                HUD.hidden = YES;
+//                HUD=nil;
+                break;
+            case SKPaymentTransactionStateFailed:
+                NSLog(@"Purchase failed ");
+                if (transaction.error.code != SKErrorPaymentCancelled)
+                {
+                    NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
+                }
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+//                _dtlBuyNowBtn.enabled = YES;
+//                HUD.hidden = YES;
+//                HUD=nil;
+                alertView = [[UIAlertView alloc]initWithTitle:
+                             transaction.error.localizedDescription message:nil delegate:
+                             self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alertView show];
+                break;
+            default:
+                break;
+        }
+    }
+    
+}
+
+-(void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
+{
+    SKProduct *validProduct = nil;
+    NSUInteger count = [response.products count];
+    if (count>0) {
+        validProducts = response.products;
+        validProduct = [response.products objectAtIndex:0];
+        if ([validProduct.productIdentifier
+             isEqualToString:productID]) {
+            //            [_dtlBookName setText:[NSString stringWithFormat:
+            //                                   @"%@",validProduct.localizedTitle]];
+            //            [_dtlAuthor setText:[NSString stringWithFormat:
+            //                                 @"%@",validProduct.localizedDescription]];
+            //            [_dtlPrice setText:[NSString stringWithFormat:
+            //                                @"%@",validProduct.price]];
+            
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
+                                      [NSString stringWithFormat:@"Do you want to purchase '%@' by '%@' for price %@",validProduct.localizedTitle,validProduct.localizedDescription,validProduct.price] message:nil delegate:
+                                      self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Buy Now",nil];
+            [alertView show];
+            
+        }
+    } else {
+        UIAlertView *tmp = [[UIAlertView alloc]
+                            initWithTitle:@"Not Available"
+                            message:@"No products to purchase"
+                            delegate:self
+                            cancelButtonTitle:nil
+                            otherButtonTitles:@"Ok", nil];
+        [tmp show];
+    }
+//    [HUD setHidden:YES];
+//    HUD = nil;
+    
+}
+
+- (void)request:(SKRequest *)request didFailWithError:(NSError *)error
+{
+    NSLog(@"failed with error %@",error);
+    
+    UIAlertView *tmp = [[UIAlertView alloc]
+                        initWithTitle:@"Message"
+                        message:error.description
+                        delegate:self
+                        cancelButtonTitle:nil
+                        otherButtonTitles:@"Ok", nil];
+    [tmp show];
+    
+//    [HUD setHidden:YES];
+//    HUD = nil;
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -56,7 +199,9 @@
     Obj_Appdelegate = [UIApplication sharedApplication].delegate;
     
     //DOTO: Set unique number
-    txt_unique_no.text = [Utility_Class get_unique_Number];
+  //  txt_unique_no.text = [Utility_Class get_unique_Number];
+    uniqueID = [NSString stringWithFormat:@"%@_%@_%f",_str_place_id,Obj_Appdelegate.userSessionID,[[NSDate date] timeIntervalSince1970]];
+    txt_unique_no.text = uniqueID;
     lbl_cliam_tittle.text = _str_place_name;
     
     if (user_login_detail.length>0)
@@ -188,7 +333,7 @@
             
             if (user_login_detail.length>0)
             {
-                dic_value = @{@"unique_no" : txt_unique_no.text,
+                dic_value = @{@"unique_no" : uniqueID,
                               @"phone" : txt_mobi_no.text,
                               @"cnpj": txt_cnpj_no.text,
                               @"user_id" : Obj_Appdelegate.userSessionID,
@@ -196,7 +341,7 @@
             }
             else
             {
-                dic_value = @{@"unique_no" : txt_unique_no.text,
+                dic_value = @{@"unique_no" : uniqueID,
                               @"phone" : txt_mobi_no.text,
                               @"cnpj": txt_cnpj_no.text,
                               @"user_id" : txt_user_mail.text,
@@ -224,7 +369,7 @@
     }
     else
     {
-        if (txt_name.text.length == 0 || txt_password.text.length == 0 || txt_conf_password.text.length == 0 || txt_unique_no.text.length == 0 || txt_mobi_no.text.length == 0 || txt_cnpj_no.text.length == 0 || txt_user_mail.text.length == 0)
+        if (txt_name.text.length == 0 || txt_password.text.length == 0 || txt_conf_password.text.length == 0 || uniqueID.length == 0 || txt_mobi_no.text.length == 0 || txt_cnpj_no.text.length == 0 || txt_user_mail.text.length == 0)
         {
             [[[UIAlertView alloc]initWithTitle:@"Failed" message:@"Please fill all above fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
         }
@@ -234,7 +379,7 @@
             
             if (user_login_detail.length>0)
             {
-                dic_value = @{@"unique_no" : txt_unique_no.text,
+                dic_value = @{@"unique_no" : uniqueID,
                               @"phone" : txt_mobi_no.text,
                               @"cnpj": txt_cnpj_no.text,
                               @"user_id" : Obj_Appdelegate.userSessionID,
@@ -243,7 +388,7 @@
             }
             else
             {
-                dic_value = @{@"unique_no" : txt_unique_no.text,
+                dic_value = @{@"unique_no" : uniqueID,
                               @"phone" : txt_mobi_no.text,
                               @"cnpj": txt_cnpj_no.text,
                               @"user_id" : txt_user_mail.text,
@@ -274,8 +419,17 @@
 -(void) Inapp_purchase_service
 {
    // http://opine.com.br/OpineAPI/api/claim/paid?status={success or failed}&unique_key={unique number which shows in unique while storing claim data.}
-    
-    [[[UIAlertView alloc]initWithTitle:@"Warning!" message:@"In_App_puchased_Not_Successed" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+     AppDelegate *objAppDelegate = [[UIApplication sharedApplication] delegate];
+    if (objAppDelegate.ispaid_user)
+    {
+        [self registerPlace];
+    }
+    else
+    {
+        [self registerPlace];
+        //[self fetchAvailableProducts];
+    }
+  //  [[[UIAlertView alloc]initWithTitle:@"Warning!" message:@"In_App_puchased_Not_Successed" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
    
 }
 
@@ -304,6 +458,41 @@
     [scro_view_details setContentOffset:CGPointMake(0,0) animated:YES];
 
     return YES;
+}
+
+
+- (void)registerPlace
+{
+   // opine.com.br/OpineAPI/api/claim/paid?status=success&unique_key={unique_key which is generated in form}
+    
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager GET:[NSString stringWithFormat:@"opine.com.br/OpineAPI/api/claim/paid?status=success&unique_key=%@",uniqueID]
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSLog(@"getCatagory responseObject = %@", [NSString stringWithUTF8String:[responseObject bytes]]);
+             NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+             
+             if ([dictTemp valueForKey:@"MessageInfo"])
+             {
+                 [[[UIAlertView alloc]initWithTitle:@"Success" message:[dictTemp valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+             }
+             if ([[dictTemp valueForKey:@"Message"] isEqualToString:@"Success"]
+                 )
+             {
+                 
+             }
+         }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             if (error) {
+                 NSLog(@"getCatagory error = %@", error);
+             }
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
+         }];
+
+    
 }
 /*
 #pragma mark - Navigation

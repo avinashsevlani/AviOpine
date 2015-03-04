@@ -329,6 +329,7 @@
         }
         else
         {
+            AppDelegate *objAppDelegate = [[UIApplication sharedApplication] delegate];
             NSDictionary *dic_value;
             
             if (user_login_detail.length>0)
@@ -344,7 +345,7 @@
                 dic_value = @{@"unique_no" : uniqueID,
                               @"phone" : txt_mobi_no.text,
                               @"cnpj": txt_cnpj_no.text,
-                              @"user_id" : txt_user_mail.text,
+                              @"user_id" : Obj_Appdelegate.userSessionID,
                               @"place_id" : _str_place_id,
                               @"email" : txt_user_mail.text,
                               @"password" : txt_password.text,
@@ -426,8 +427,8 @@
     }
     else
     {
-        [self registerPlace];
-        //[self fetchAvailableProducts];
+        //[self registerPlace];
+        [self fetchAvailableProducts];
     }
   //  [[[UIAlertView alloc]initWithTitle:@"Warning!" message:@"In_App_puchased_Not_Successed" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
    

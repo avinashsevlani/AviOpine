@@ -124,7 +124,6 @@
 		4CA6C6441A132E7100E9BD96 /* imgGoogle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6C6411A132E7100E9BD96 /* imgGoogle.png */; };
 		4CA6C6451A132E7100E9BD96 /* imgFBShare.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6C6421A132E7100E9BD96 /* imgFBShare.png */; };
 		4CA6C6481A132ED500E9BD96 /* imgTwitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6C6461A132ED500E9BD96 /* imgTwitter.png */; };
-		4CB1098A1A14D4950035D121 /* imgYesEnable.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB109861A14D4950035D121 /* imgYesEnable.png */; };
 		4CB1098B1A14D4950035D121 /* imgNoDisable.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB109871A14D4950035D121 /* imgNoDisable.png */; };
 		4CB1098C1A14D4950035D121 /* imgYesDisable.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB109881A14D4950035D121 /* imgYesDisable.png */; };
 		4CB1098D1A14D4950035D121 /* ingNoEnable.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB109891A14D4950035D121 /* ingNoEnable.png */; };
@@ -340,7 +339,6 @@
 		4CA6C6421A132E7100E9BD96 /* imgFBShare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgFBShare.png; sourceTree = "<group>"; };
 		4CA6C6461A132ED500E9BD96 /* imgTwitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgTwitter.png; sourceTree = "<group>"; };
 		4CA6C6471A132ED500E9BD96 /* imgFB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgFB.png; sourceTree = "<group>"; };
-		4CB109861A14D4950035D121 /* imgYesEnable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgYesEnable.png; sourceTree = "<group>"; };
 		4CB109871A14D4950035D121 /* imgNoDisable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgNoDisable.png; sourceTree = "<group>"; };
 		4CB109881A14D4950035D121 /* imgYesDisable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgYesDisable.png; sourceTree = "<group>"; };
 		4CB109891A14D4950035D121 /* ingNoEnable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ingNoEnable.png; sourceTree = "<group>"; };
@@ -892,7 +890,6 @@
 				4CA551671A0B906700A2C1D8 /* imgWhiteBox.png */,
 				4C993CC51A136A1F00843A9D /* imgYes.png */,
 				4CB109881A14D4950035D121 /* imgYesDisable.png */,
-				4CB109861A14D4950035D121 /* imgYesEnable.png */,
 				4CB109891A14D4950035D121 /* ingNoEnable.png */,
 				4C8883891A14CE6C0037D236 /* museums.png */,
 				4C625A0F1A147EB100AA8D66 /* O-29.png */,
@@ -1203,7 +1200,6 @@
 				4CFE99191A32D5AB000A8462 /* ingNoEnable.png in Resources */,
 				4CA551601A0B831C00A2C1D8 /* imgLike.png in Resources */,
 				4CC105F31A32C48300F3D919 /* imgYesEnable.png in Resources */,
-				4CB1098A1A14D4950035D121 /* imgYesEnable.png in Resources */,
 				4CB1098D1A14D4950035D121 /* ingNoEnable.png in Resources */,
 				1816F23D1A5BBB5100421788 /* My_place_reportViewController.xib in Resources */,
 				1873894A1A792BB100A7A8CB /* CommantTableViewCell.xib in Resources */,

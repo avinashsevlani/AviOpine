@@ -259,11 +259,11 @@
                     <color key="backgroundColor" red="0.180392161" green="0.74117648599999997" blue="0.76470595600000002" alpha="1" colorSpace="deviceRGB"/>
                 </scrollView>
                 <view contentMode="scaleToFill" id="QKW-9h-Rbr">
-                    <rect key="frame" x="8" y="173" width="398" height="555"/>
+                    <rect key="frame" x="8" y="71" width="398" height="655"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yjj-DT-Dhc">
-                            <rect key="frame" x="149" y="523" width="101" height="24"/>
+                            <rect key="frame" x="149" y="623" width="101" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <state key="normal" title="Close" backgroundImage="imgButtonBack.png">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -281,7 +281,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="qsH-ip-maj">
-                            <rect key="frame" x="8" y="118" width="382" height="326"/>
+                            <rect key="frame" x="8" y="118" width="382" height="401"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -289,7 +289,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="HJQ-eC-zJT">
-                            <rect key="frame" x="8" y="37" width="382" height="73"/>
+                            <rect key="frame" x="8" y="37" width="382" height="87"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

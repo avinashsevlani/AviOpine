@@ -182,6 +182,8 @@ NSData *dataImage;
                              [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                              return;
                          }
+                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[dictTemp valueForKey:@"MessageInfo"]delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                         [alert show];
                          objAppDelegate.marrUserData = [[NSMutableArray alloc] init];
                          UserModel *objUser = [[UserModel alloc] init];
                          objUser.userSessionID = objAppDelegate.userSessionID;

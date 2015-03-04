@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hlq-W5-Ceu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hlq-W5-Ceu">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -1755,11 +1755,10 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="height" constant="50" id="Zdv-EC-wWX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94L-W2-qOc">
-                                <rect key="frame" x="34" y="80" width="108" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94L-W2-qOc">
+                                <rect key="frame" x="34" y="80" width="550" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="91E-Ku-kvP"/>
-                                    <constraint firstAttribute="width" constant="108" id="ZEu-2z-Eys"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -1912,6 +1911,8 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                             <constraint firstItem="sG1-Np-6Ih" firstAttribute="top" secondItem="noT-KM-rLf" secondAttribute="bottom" constant="-1" id="Yog-3O-0MA"/>
                             <constraint firstItem="Pi1-WJ-bfc" firstAttribute="top" secondItem="4XC-cB-5Dz" secondAttribute="bottom" constant="19" id="Z6X-yn-26Z"/>
                             <constraint firstItem="rsU-uG-azk" firstAttribute="top" secondItem="MuI-gx-gUi" secondAttribute="bottom" id="cWT-K7-Axl"/>
+                            <constraint firstAttribute="trailing" secondItem="94L-W2-qOc" secondAttribute="trailing" constant="16" id="hbg-iU-8bt"/>
+                            <constraint firstItem="94L-W2-qOc" firstAttribute="leading" secondItem="bdb-wg-fcG" secondAttribute="leading" constant="34" id="hd2-TS-BFD"/>
                             <constraint firstItem="Pi1-WJ-bfc" firstAttribute="trailing" secondItem="bdb-wg-fcG" secondAttribute="trailingMargin" id="jHU-1v-75k"/>
                         </constraints>
                     </view>

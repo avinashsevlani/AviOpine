@@ -19,7 +19,7 @@
 
 
 
-@interface ClaimMyPlaceViewController ()<DYRateViewDelegate,SignupViewControllerDelegate>
+@interface ClaimMyPlaceViewController ()<DYRateViewDelegate,SignupViewControllerDelegate,UITextViewDelegate>
 {
     NSUInteger _numPages;
     NSUInteger _pageCount;
@@ -987,6 +987,13 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 //    [self ratingUserInterfaceEnable:YES];
     //    [self.tblComment reloadData];
 }
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    [textView.text isEqualToString:@""];
+    return  YES;
+}
+
 
 - (IBAction)btn_no_rate_Aomment_Action:(UIButton *)sender
 {

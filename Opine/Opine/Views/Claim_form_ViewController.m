@@ -61,7 +61,7 @@
 -(void)fetchAvailableProducts{
     
     NSSet *productIdentifiers = [NSSet
-                                 setWithObjects:productID,nil];
+                                 setWithObjects:productID,@"com.company.opine.consumable",nil];
     productsRequest = [[SKProductsRequest alloc]
                        initWithProductIdentifiers:productIdentifiers];
     productsRequest.delegate = self;
@@ -262,7 +262,7 @@
 {
     if ([alertView.title isEqualToString:@"Success"])
     {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        //[self dismissViewControllerAnimated:YES completion:nil];
     }
     else if ([alertView.message isEqualToString:@"In_App_puchased_Not_Successed"])
     {
@@ -336,7 +336,7 @@
             {
                 dic_value = @{@"unique_no" : uniqueID,
                               @"phone" : txt_mobi_no.text,
-                              @"cnpj": txt_cnpj_no.text,
+                              @"cnpj": @"60.026.219/0001-91",
                               @"user_id" : Obj_Appdelegate.userSessionID,
                               @"place_id" : _str_place_id};
             }
@@ -344,7 +344,7 @@
             {
                 dic_value = @{@"unique_no" : uniqueID,
                               @"phone" : txt_mobi_no.text,
-                              @"cnpj": txt_cnpj_no.text,
+                              @"cnpj": @"60.026.219/0001-91",
                               @"user_id" : Obj_Appdelegate.userSessionID,
                               @"place_id" : _str_place_id,
                               @"email" : txt_user_mail.text,

@@ -125,8 +125,8 @@
 - (void)loadData
 {
     objAppDelegate = [[UIApplication sharedApplication] delegate];
-    objAppDelegate.marrCategory = [[NSMutableArray alloc] init];
-    objAppDelegate.marrPlace = [[NSMutableArray alloc] init];
+//    objAppDelegate.marrCategory = [[NSMutableArray alloc] init];
+//    objAppDelegate.marrPlace = [[NSMutableArray alloc] init];
     if (objAppDelegate.isLogin)
     {
         if (objAppDelegate.ispaid_user) {

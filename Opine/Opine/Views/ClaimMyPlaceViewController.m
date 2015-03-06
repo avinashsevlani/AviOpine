@@ -653,7 +653,8 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 -(void)hiderateAndCommantView
 {
     _txt_command_title.text=@"";
-    _txt_commentDescription.text=@"";
+    _txt_commentDescription.textColor = [UIColor lightGrayColor];
+    _txt_commentDescription.text=@"Comment";
     _scrollview_rateandcommand.hidden=YES;
 }
 
@@ -990,7 +991,11 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
-    [textView.text isEqualToString:@""];
+    if ([textView.text isEqualToString:@"Comment"])
+    {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor];
+    }
     return  YES;
 }
 

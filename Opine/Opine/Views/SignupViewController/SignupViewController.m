@@ -255,6 +255,11 @@
                   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                   return;
               }
+              else if ([dictTemp valueForKey:@"MessageInfo"])
+              {
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[dictTemp valueForKey:@"MessageInfo"]delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                  [alert show];
+              }
               objAppDelegate.marrUserData = [[NSMutableArray alloc] init];
               UserModel *objUser = [[UserModel alloc] init];
               objUser.userSessionID = [dictTemp valueForKey:@"Usr_SessionID"];

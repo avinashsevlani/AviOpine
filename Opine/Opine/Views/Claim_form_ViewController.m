@@ -17,7 +17,7 @@
 
 #define productID @"com.opineYearSubscription.yearly"
 
-@interface Claim_form_ViewController ()<SKProductsRequestDelegate>
+@interface Claim_form_ViewController ()<SKProductsRequestDelegate,SKPaymentTransactionObserver>
 {
     
     IBOutlet UILabel *lbl_cliam_tittle;
@@ -61,7 +61,7 @@
 -(void)fetchAvailableProducts{
     
     NSSet *productIdentifiers = [NSSet
-                                 setWithObjects:productID,@"com.company.opine.consumable",nil];
+                                 setWithObjects:productID,nil];
     productsRequest = [[SKProductsRequest alloc]
                        initWithProductIdentifiers:productIdentifiers];
     productsRequest.delegate = self;
@@ -77,6 +77,7 @@
     if ([self canMakePurchases]) {
         SKPayment *payment = [SKPayment paymentWithProduct:product];
         [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+        //[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
         [[SKPaymentQueue defaultQueue] addPayment:payment];
     }
     else{
@@ -155,6 +156,7 @@
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
                                       [NSString stringWithFormat:@"Do you want to purchase '%@' by '%@' for price %@",validProduct.localizedTitle,validProduct.localizedDescription,validProduct.price] message:nil delegate:
                                       self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Buy Now",nil];
+            alertView.tag = 2222;
             [alertView show];
             
         }
@@ -171,6 +173,12 @@
 //    HUD = nil;
     
 }
+
+//
+//- (IBAction)buyProduct:(id)sender {
+//    SKPayment *payment = [SKPayment paymentWithProduct:_product];
+//    [[SKPaymentQueue defaultQueue] addPayment:payment];
+//}
 
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error
 {
@@ -200,7 +208,7 @@
     
     //DOTO: Set unique number
   //  txt_unique_no.text = [Utility_Class get_unique_Number];
-    uniqueID = [NSString stringWithFormat:@"%@_%@_%f",_str_place_id,Obj_Appdelegate.userSessionID,[[NSDate date] timeIntervalSince1970]];
+    uniqueID = [NSString stringWithFormat:@"%@_%@_%.0f",_str_place_id,Obj_Appdelegate.userSessionID,[[NSDate date] timeIntervalSince1970]];
     txt_unique_no.text = uniqueID;
     lbl_cliam_tittle.text = _str_place_name;
     
@@ -260,34 +268,52 @@
 #pragma mark - alertview delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if ([alertView.title isEqualToString:@"Success"])
+    if (alertView.tag == 2222)
     {
-        //[self dismissViewControllerAnimated:YES completion:nil];
-    }
-    else if ([alertView.message isEqualToString:@"In_App_puchased_Not_Successed"])
-    {
-        NSDictionary * dic_value = @{@"status" : @"success",
-                                     @"unique_key" : txt_mobi_no.text,
-                                     };
-        NSDictionary *dic =  [Utility_Class  Request_service_get_response_in_Post:dic_value :@"http://opine.com.br/OpineAPI/api/claim/paid?"];
-        if ([[dic valueForKeyPath:@"Success"] isEqualToString:@"1"])
+        if (buttonIndex == 1)
         {
-            [[[UIAlertView alloc]initWithTitle:@"Success" message:[dic valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+            [self purchaseMyProduct:[validProducts firstObject]];
         }
-        else
+    }
+    else if (alertView.tag == 3333)
+    {
+        if (buttonIndex == 0)
         {
-            [[[UIAlertView alloc]initWithTitle:@"Failed" message:[dic valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
     }
     else
     {
-        if (buttonIndex ==0 )
+        if ([alertView.title isEqualToString:@"Success"])
         {
-            
+            //[self dismissViewControllerAnimated:YES completion:nil];
+        }
+        else if ([alertView.message isEqualToString:@"In_App_puchased_Not_Successed"])
+        {
+            NSDictionary * dic_value = @{@"status" : @"success",
+                                         @"unique_key" : txt_mobi_no.text,
+                                         };
+            NSDictionary *dic =  [Utility_Class  Request_service_get_response_in_Post:dic_value :@"http://opine.com.br/OpineAPI/api/claim/paid?"];
+            if ([[dic valueForKeyPath:@"Success"] isEqualToString:@"1"])
+            {
+                [[[UIAlertView alloc]initWithTitle:@"Success" message:[dic valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+            }
+            else
+            {
+                [[[UIAlertView alloc]initWithTitle:@"Failed" message:[dic valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+            }
         }
         else
         {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            if (buttonIndex ==0 )
+            {
+                
+            }
+            else
+            {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+            
         }
 
     }
@@ -470,21 +496,29 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:[NSString stringWithFormat:@"opine.com.br/OpineAPI/api/claim/paid?status=success&unique_key=%@",uniqueID]
-      parameters:nil
+    
+     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: @"success", @"status", uniqueID, @"unique_key", nil];
+    
+    [manager POST:[NSString stringWithFormat:@"http://opine.com.br/OpineAPI/api/claim/paid"]
+      parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSLog(@"getCatagory responseObject = %@", [NSString stringWithUTF8String:[responseObject bytes]]);
              NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
              
              if ([dictTemp valueForKey:@"MessageInfo"])
              {
-                 [[[UIAlertView alloc]initWithTitle:@"Success" message:[dictTemp valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+               UIAlertView* alertView =  [[UIAlertView alloc]initWithTitle:@"Success" message:[dictTemp valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                 alertView.tag = 3333;
+                 [alertView show];
+                                          
+                                          
              }
              if ([[dictTemp valueForKey:@"Message"] isEqualToString:@"Success"]
                  )
              {
                  
              }
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
          }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              if (error) {

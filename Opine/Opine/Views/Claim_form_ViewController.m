@@ -206,8 +206,18 @@
     
     Obj_Appdelegate = [UIApplication sharedApplication].delegate;
     
+    [self loadUserInfo];
+    
+    
     //DOTO: Set unique number
   //  txt_unique_no.text = [Utility_Class get_unique_Number];
+   
+}
+
+
+
+- (void)initializeData
+{
     uniqueID = [NSString stringWithFormat:@"%@_%@_%.0f",_str_place_id,Obj_Appdelegate.userSessionID,[[NSDate date] timeIntervalSince1970]];
     txt_unique_no.text = uniqueID;
     lbl_cliam_tittle.text = _str_place_name;
@@ -217,6 +227,63 @@
         [self hide_labels:YES];
         [self change_lbl_txt_frame_size];
     }
+}
+
+- (void)loadUserInfo
+{
+  //  http://www.opine.com.br/OpineAPI/api/user/info?Usr_SessionID={UserSessionID}
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    //http://www.opine.com.br/OpineAPI/api/user/info?Usr_SessionID={UserSessionID}
+    
+    AppDelegate *objAppDelegate = [[UIApplication sharedApplication] delegate];
+  //  NSDictionary *dic_value;
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:objAppDelegate.userSessionID, @"Usr_SessionID", nil];
+    
+    
+    [manager POST:[NSString stringWithFormat:@"http://www.opine.com.br/OpineAPI/api/user/info"]
+       parameters:params
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"getCatagory responseObject = %@", [NSString stringWithUTF8String:[responseObject bytes]]);
+              NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+              
+              if ([dictTemp valueForKey:@"Info"])
+              {
+                  NSDictionary* userInfo = [dictTemp valueForKey:@"Info"];
+                /*
+                   "Usr_Cnpj" = 35678;
+                   "Usr_Id" = 1;
+                   "Usr_No" = 5786899;
+                   */
+                  
+                  if ([userInfo valueForKey:@"Usr_Cnpj"])
+                  {
+                      txt_cnpj_no.text = [userInfo valueForKey:@"Usr_Cnpj"];
+                  }
+                  if ([userInfo valueForKey:@"Usr_No"])
+                  {
+                      txt_mobi_no.text = [userInfo valueForKey:@"Usr_No"];
+                  }
+
+                  
+                  
+              }
+              [self initializeData];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if (error) {
+                  NSLog(@"getCatagory error = %@", error);
+              }
+              [self initializeData];
+              [MBProgressHUD hideHUDForView:self.view animated:YES];
+          }];
+ 
+    
+    
 }
 
 #pragma hide views

@@ -362,7 +362,7 @@
             {
                 dic_value = @{@"unique_no" : uniqueID,
                               @"phone" : txt_mobi_no.text,
-                              @"cnpj": @"60.026.219/0001-91",
+                              @"cnpj": txt_cnpj_no.text,
                               @"user_id" : Obj_Appdelegate.userSessionID,
                               @"place_id" : _str_place_id};
             }
@@ -370,7 +370,7 @@
             {
                 dic_value = @{@"unique_no" : uniqueID,
                               @"phone" : txt_mobi_no.text,
-                              @"cnpj": @"60.026.219/0001-91",
+                              @"cnpj": txt_cnpj_no.text,
                               @"user_id" : Obj_Appdelegate.userSessionID,
                               @"place_id" : _str_place_id,
                               @"email" : txt_user_mail.text,

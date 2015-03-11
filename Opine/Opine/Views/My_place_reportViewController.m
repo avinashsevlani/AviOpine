@@ -65,6 +65,9 @@
     [tableRatingView registerNib:nib forCellReuseIdentifier:@"RatingListTableViewCellRUI"];
     // webview.scalesPageToFit = NO;
     // [webview stringByEvaluatingJavaScriptFromString:@"document. body.style.zoom = 5.0;"];
+    viewLike.layer.borderWidth = 1.0;
+    viewLike.layer.borderColor = [UIColor whiteColor].CGColor;
+    
 }
 
 
@@ -152,6 +155,9 @@
     {
         lbl_comment_count.text = [NSString stringWithFormat:@"%d", [[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Comment"] count]];
         lbl_rate_count.text = [NSString stringWithFormat:@"%d",  [[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Comment"] count]];
+        lbl_average_rate.text = [dic_response valueForKeyPath:@"Place.Rating"];
+        likeCount.text = [NSString stringWithFormat:@"(%@)",[dic_response valueForKeyPath:@"Place.Repeat_No"]];
+        unlikeCount.text = [NSString stringWithFormat:@"(%@)",[dic_response valueForKeyPath:@"Place.Repeat_Yes"]];
         commentRatingArray = [dic_response valueForKeyPath:@"Place.CommentRating"];
     }
     else

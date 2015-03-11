@@ -17,6 +17,10 @@
     NIDropDown *dropDown;
     IBOutlet UILabel *lbl_comment_count;
     IBOutlet UILabel *lbl_rate_count;
+    IBOutlet UILabel *lbl_average_rate;
+    IBOutlet UILabel *likeCount;
+    IBOutlet UILabel *unlikeCount;
+    IBOutlet UIView * viewLike;
     
     IBOutlet UITableView *tbl_comment;
     

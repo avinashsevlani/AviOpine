@@ -35,6 +35,7 @@
     IBOutlet UILabel *lbl_rating;
     
     NSMutableArray *array_user_name,*array_comment,*array_image,*totla_username,*total_comment,*total_image,*total_comment_id,*array_comment_id,*total_comment_reply,*array_comment_reply,*array_comment_tittle,*total_comment_tittle;
+    NSMutableArray *array_comment_rate,*total_comment_rate;
     
     
     IBOutlet UIView *view_more;
@@ -71,6 +72,7 @@
     total_comment_id = [NSMutableArray new];
     total_comment_reply = [NSMutableArray new];
     total_comment_tittle = [NSMutableArray new];
+    total_comment_rate = [NSMutableArray new];
     
     
 
@@ -118,6 +120,8 @@
     array_comment_id = [NSMutableArray new];
     array_comment_reply = [NSMutableArray new];
     array_comment_tittle = [NSMutableArray new];
+    array_comment_rate = [NSMutableArray new];
+    
     
     float count = [[_dic_details valueForKeyPath:@"PlaceDetails.Comments.Com_Comment"] count];
     float five = 5;
@@ -134,6 +138,7 @@
             [total_image addObject:[_dic_details valueForKeyPath:@"PlaceDetails.Comments.Com_Name_Image"][j]];
             [totla_username addObject:[_dic_details valueForKeyPath:@"PlaceDetails.Comments.Com_Name"][j]];
             [total_comment_id addObject:[_dic_details valueForKeyPath:@"PlaceDetails.Comments.Com_Id"][j]];
+            [total_comment_rate addObject:[_dic_details valueForKeyPath:@"PlaceDetails.Comments.Rate"][j]];
             [total_comment_reply addObject:[_dic_details valueForKeyPath:@"PlaceDetails.Comments.Com_Reply"][j]];
             [total_comment_tittle addObject:[_dic_details valueForKeyPath:@"PlaceDetails.Comments.Com_Title"][j]];
             
@@ -143,6 +148,7 @@
                 [array_image addObject:total_image];
                 [array_user_name addObject:totla_username];
                 [array_comment_id addObject:total_comment_id];
+                [array_comment_rate addObject:total_comment_rate];
                 [array_comment_reply addObject:total_comment_reply];
                 [array_comment_tittle addObject:total_comment_tittle];
                 
@@ -150,6 +156,7 @@
                 totla_username = [NSMutableArray new];
                 total_image = [NSMutableArray new];
                 total_comment_id = [NSMutableArray new];
+                total_comment_rate = [NSMutableArray new];
                 total_comment_reply = [NSMutableArray new];
                 total_comment_tittle = [NSMutableArray new];
                 break;
@@ -161,6 +168,7 @@
             [array_image addObject:total_image];
             [array_user_name addObject:totla_username];
             [array_comment_id addObject:total_comment_id];
+            [array_comment_rate addObject:total_comment_rate];
             [array_comment_reply addObject:total_comment_reply];
             [array_comment_tittle addObject:total_comment_tittle];
         }
@@ -298,6 +306,9 @@
         cell.backgroundColor = [UIColor colorWithRed:0.f green:187/255.0f blue:194/255.0f alpha:1.0f];
         DYRateView *rv = [[DYRateView alloc] initWithFrame:CGRectMake(100, 22, 220, 25)];
         rv.rate = 5;
+        
+        
+        
         rv.delegate = self;
         rv.alignment = RateViewAlignmentLeft;
         rv.editable = YES;
@@ -333,11 +344,14 @@
         cell.layer.borderWidth = 1.0;
         cell.layer.borderColor = [UIColor whiteColor].CGColor;
         DYRateView *rv = [[DYRateView alloc] initWithFrame:CGRectMake(8, 38, 200, 30)];
-        rv.rate = 5;
+       // rv.rate = 5;
+               
+        rv.rate = [array_comment_rate [split_array][indexPath.row] floatValue];
         rv.delegate = self;
         rv.alignment = RateViewAlignmentLeft;
         rv.editable = YES;
         [cell addSubview:rv];
+        
         NSLog(@"%@", [NSString stringWithFormat:@"%@",array_image[split_array][indexPath.row]]);
         [cell.img_place setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",array_image[split_array][indexPath.row]]] placeholderImage:[UIImage imageNamed:@"imagenotfound.png"]];
         
@@ -361,34 +375,26 @@
 - (IBAction)btn_right_arrow_action:(id)sender
 {
     //[self set_array_values : 1];
-    split_array ++;
     
-    if (split_array >= [totla_username count])
+    //array_comment
+    if (split_array < [array_comment count] - 1)
     {
-        
-    }
-    else
-    {
-        lbl_pagecount.text = [NSString stringWithFormat:@"Page: %d", split_array];
+        split_array ++;
+        lbl_pagecount.text = [NSString stringWithFormat:@"Page: %d", (split_array+1)];
         [tbl_place_details reloadData];
     }
-    
 }
 - (IBAction)btn_left_arrow_action:(id)sender
 {
 //    [self set_array_values : 0];
-    split_array --;
     
-    if (split_array >= [totla_username count])
-    {
-        
-    }
-    else
-    {
-        lbl_pagecount.text = [NSString stringWithFormat:@"Page: %d", split_array];
-         [tbl_place_details reloadData];
-    }
     
+    if (split_array > 0)
+    {
+        split_array --;
+        lbl_pagecount.text = [NSString stringWithFormat:@"Page: %d", (split_array+1)];
+        [tbl_place_details reloadData];
+    }
 }
 
 #pragma mark - set array count
@@ -404,7 +410,9 @@
             for (i = index; index < [total_comment count]; index++)
             {
                 [array_comment addObject: total_comment[index]];
+                [array_comment addObject: total_comment[index]];
                 [array_user_name addObject:totla_username[index]];
+                [array_comment_rate addObject:total_comment_rate[index]];
                 [array_image addObject:total_image[index]];
                 if ([array_comment count] >4)
                 {
@@ -417,6 +425,7 @@
             for (int i= index; i <[total_comment count]; i++)
             {
                 [array_comment addObject: total_comment[i]];
+                [array_comment_rate addObject:total_comment_rate[i]];
                 [array_user_name addObject:totla_username[i]];
                 [array_image addObject:total_image[index]];
                 index++;
@@ -433,12 +442,14 @@
             {
                 [array_comment addObject: total_comment[index]];
                 [array_user_name addObject:totla_username[index]];
+                [array_comment_rate addObject:total_comment_rate[index]];
                 [array_image addObject:total_image[index]];
                 if ([array_comment count] >4)
                 {
                     array_comment =  [[[array_comment reverseObjectEnumerator] allObjects] mutableCopy];
                     array_user_name =  [[[array_user_name reverseObjectEnumerator] allObjects] mutableCopy];
                     array_image =  [[[array_image reverseObjectEnumerator] allObjects] mutableCopy];
+                    array_comment_rate = [[[array_comment_rate reverseObjectEnumerator]allObjects]mutableCopy];
                     break;
                 }
             }
@@ -449,6 +460,7 @@
             {
                 [array_comment addObject: total_comment[i]];
                 [array_user_name addObject:totla_username[i]];
+                [array_comment_rate addObject:total_comment_rate[i]];
                 [array_image addObject:total_image[index]];
                 index--;
             }
@@ -481,11 +493,13 @@
 
 - (IBAction)btn_anser_cancel_action:(id)sender
 {
+    [scroll_answer_View endEditing:YES];
     scroll_answer_View.hidden = YES;
 }
 
 -(void) reply_service
 {
+    
     NSDictionary * dic_data = @{ @"comment_id" :[NSString stringWithFormat:@"%@",str_comment_id],
                                  @"reply" : txtv_answer.text
                                  };
@@ -501,6 +515,7 @@
 
 - (IBAction)btn_answer_reply_action:(id)sender
 {
+    [scroll_answer_View endEditing:YES];
      [self performSelectorInBackground:@selector(reply_service) withObject:nil];
 }
 

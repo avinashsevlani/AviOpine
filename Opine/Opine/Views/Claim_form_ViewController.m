@@ -218,7 +218,7 @@
 
 - (void)initializeData
 {
-    uniqueID = [NSString stringWithFormat:@"%@_%@_%.0f",_str_place_id,Obj_Appdelegate.userSessionID,[[NSDate date] timeIntervalSince1970]];
+    uniqueID = [NSString stringWithFormat:@"%@_%.0f",_str_place_id,[[NSDate date] timeIntervalSince1970]];
     txt_unique_no.text = uniqueID;
     lbl_cliam_tittle.text = _str_place_name;
     
@@ -232,13 +232,22 @@
 - (void)loadUserInfo
 {
   //  http://www.opine.com.br/OpineAPI/api/user/info?Usr_SessionID={UserSessionID}
+    
+    AppDelegate *objAppDelegate = [[UIApplication sharedApplication] delegate];
+    if (!objAppDelegate.userSessionID.length)
+    {
+        [self initializeData];
+        return;
+        
+    }
+    
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     //http://www.opine.com.br/OpineAPI/api/user/info?Usr_SessionID={UserSessionID}
     
-    AppDelegate *objAppDelegate = [[UIApplication sharedApplication] delegate];
+    
   //  NSDictionary *dic_value;
     
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:objAppDelegate.userSessionID, @"Usr_SessionID", nil];

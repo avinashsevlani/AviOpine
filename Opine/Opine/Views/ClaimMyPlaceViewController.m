@@ -99,6 +99,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 
 
 - (void)viewDidLoad {
+    //[_btn_rate_Commant setBackgroundImage:<#(UIImage *)#> forState:(UIControlState)
     [super viewDidLoad];
     [self setUpUI];
 
@@ -270,12 +271,13 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
     [_lbl_page setText:[NSString stringWithFormat:@"Página : %lu",(unsigned long)_pageCount]];
 
     if (objAppDelegate.isLogin) {
-        [_btn_rate_Commant setBackgroundImage:[UIImage imageNamed:@"imgButtonRate.png"] forState:UIControlStateNormal];
+        //[_btn_rate_Commant setBackgroundImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
+        [_btn_rate_Commant setTitle:@"Vote" forState:UIControlStateNormal];
         _btn_rate_Commant.frame = CGRectMake(_btn_rate_Commant.frame.origin.x+30, _btn_rate_Commant.frame.origin.y, _btn_rate_Commant.frame.size.width, _btn_rate_Commant.frame.size.height);
         [_btn_rate_Commant setTitle:@"" forState:UIControlStateNormal];
         
     } else {
-        [_btn_rate_Commant setImage:[UIImage imageNamed:@"imgRateComment.png"] forState:UIControlStateNormal];
+        //[_btn_rate_Commant setImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
         [_btn_rate_Commant setTitle:@"Vote & Comente" forState:UIControlStateNormal];
         _btn_rate_Commant.frame = CGRectMake(_btn_rate_Commant.frame.origin.x, _btn_rate_Commant.frame.origin.y, _btn_rate_Commant.frame.size.width, _btn_rate_Commant.frame.size.height);
     }
@@ -857,7 +859,8 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
         }
     }
     [self storeRateAndComment];
-    [_btn_rate_Commant setImage:[UIImage imageNamed:@"imgRateComment.png"] forState:UIControlStateNormal];
+   // [_btn_rate_Commant setImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
+     [_btn_rate_Commant setTitle:@"Vote & Comente" forState:UIControlStateNormal];
     //imgButtonBack.png
     _btn_rate_Commant.hidden = NO;
     //    btnClaim.hidden = NO;
@@ -967,18 +970,21 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 - (void)setUserName:(NSString *)username
 {
     if (objAppDelegate.isLogin) {
-        [_btn_rate_Commant setImage:[UIImage imageNamed:@"imgButtonRate.png"] forState:UIControlStateNormal];
+      //  [_btn_rate_Commant setImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
+         [_btn_rate_Commant setTitle:@"Vote" forState:UIControlStateNormal];
         _btn_rate_Commant.hidden = YES;
         //        btnClaim.hidden = YES;
         [self showRateAndcommantView];
     } else {
-        [_btn_rate_Commant setImage:[UIImage imageNamed:@"imgRateComment.png"] forState:UIControlStateNormal];
+        //[_btn_rate_Commant setImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
+        [_btn_rate_Commant setTitle:@"Vote & Comente" forState:UIControlStateNormal];
 //        vwComment.hidden = YES;
         [self hiderateAndCommantView];
         //        btnClaim.hidden = NO;
         _btn_rate_Commant.hidden = NO;
     }
-    [_btn_rate_Commant setImage:[UIImage imageNamed:@"imgRateNow.png"] forState:UIControlStateNormal];
+    //[_btn_rate_Commant setImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
+    [_btn_rate_Commant setTitle:@"Vote" forState:UIControlStateNormal];
     isShareIts = NO;
     iisRepeatNo = NO;
     iisRepeatYes = NO;

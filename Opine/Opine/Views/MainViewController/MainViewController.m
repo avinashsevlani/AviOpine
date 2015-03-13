@@ -423,6 +423,30 @@ bool isPlaceByCategoryDone = NO;
 {
     [self.slidingViewController resetTopView];
     if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"Sobre Nós"]) {
+        
+        if (!aboutUSLabel.text.length)
+        {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+            manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+            [manager POST:[NSString stringWithFormat:@"http://opine.com.br/OpineAPI/api/page/get?key=about_us"]
+              parameters:nil
+                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                     NSLog(@"getCatagory responseObject = %@", [NSString stringWithUTF8String:[responseObject bytes]]);
+                     NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+                     NSString *contentStr = [dictTemp valueForKey:@"content"];
+                     aboutUSLabel.text = contentStr;
+                      [MBProgressHUD hideHUDForView:self.view animated:YES];
+                 }
+                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                     if (error) {
+                         NSLog(@"getCatagory Erro = %@", error);
+                     }
+                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                 }];
+
+        }
+        
         vwAboutUs.hidden = NO;
     } else if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"Meus Lugares"])
     {

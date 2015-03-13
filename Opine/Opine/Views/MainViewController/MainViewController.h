@@ -18,6 +18,7 @@
     NIDropDown *dropDown;
     AppDelegate *objAppDelegate;
     CLLocationManager *locationManager;
+  IBOutlet  UILabel* aboutUSLabel;
     double lat, lon;
 }
 

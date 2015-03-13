@@ -368,11 +368,8 @@
                                             <constraint firstAttribute="width" constant="600" id="sZm-WZ-Ygp"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoG-gk-6m9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoG-gk-6m9">
                                         <rect key="frame" x="39" y="65" width="530" height="426"/>
-                                        <string key="text">Brazil is the only Latin American nation that derives its language and culture from Portugal. The native inhabitants mostly consisted of the nomadic Tupí-Guaraní Indians. Adm. Pedro Alvares Cabral claimed the territory for Portugal in 1500. The early explorers brought back a wood that produced a red dye, pau-brasil, from which the land received its name. Portugal began colonization in 1532 and made the area a royal colony in 1549.
-
-During the Napoleonic Wars, King João VI, fearing the advancing French armies, fled Portugal in 1808 and set up his court in Rio de Janeiro. João was drawn home in 1820 by a revolution, leaving his son as regent. When Portugal tried to reimpose colonial rule, the prince declared Brazil's independence on Sept. 7, 1822, becoming Pedro I, emperor of Brazil. Harassed by his parliament, Pedro I abdicated in 1831 in favor of his five-year-old son, who became emperor in 1840 (Pedro II). The son was a popular monarch, but discontent built up, and in 1889, following a military revolt, he abdicated. Although a republic was proclaimed, Brazil was ruled by military dictatorships until a revolt permitted a gradual return to stability under civilian presidents.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -466,6 +463,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                     </view>
                     <navigationItem key="navigationItem" id="ksl-4R-2qT"/>
                     <connections>
+                        <outlet property="aboutUSLabel" destination="HoG-gk-6m9" id="JnH-gO-fbB"/>
                         <outlet property="btnChooseCategory" destination="HVv-Kh-ifh" id="kN7-cK-Jl7"/>
                         <outlet property="btnLeftArrowCategory" destination="jeN-fd-Nfn" id="vdr-ul-RU3"/>
                         <outlet property="btnLeftArrowPlace" destination="5zH-vI-wfV" id="6Dj-L2-NLD"/>

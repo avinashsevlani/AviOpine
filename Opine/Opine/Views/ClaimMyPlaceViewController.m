@@ -267,7 +267,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
      _page_controller.currentPage = _pageCount-1;
      _page_controller.numberOfPages = _numPages;
 
-    [_lbl_page setText:[NSString stringWithFormat:@"Page : %lu",(unsigned long)_pageCount]];
+    [_lbl_page setText:[NSString stringWithFormat:@"Página : %lu",(unsigned long)_pageCount]];
 
     if (objAppDelegate.isLogin) {
         [_btn_rate_Commant setBackgroundImage:[UIImage imageNamed:@"imgButtonRate.png"] forState:UIControlStateNormal];
@@ -276,7 +276,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
         
     } else {
         [_btn_rate_Commant setImage:[UIImage imageNamed:@"imgRateComment.png"] forState:UIControlStateNormal];
-        [_btn_rate_Commant setTitle:@"Rate & commant" forState:UIControlStateNormal];
+        [_btn_rate_Commant setTitle:@"Vote & Comente" forState:UIControlStateNormal];
         _btn_rate_Commant.frame = CGRectMake(_btn_rate_Commant.frame.origin.x, _btn_rate_Commant.frame.origin.y, _btn_rate_Commant.frame.size.width, _btn_rate_Commant.frame.size.height);
     }
     if (_numPages > 1) {
@@ -298,7 +298,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 }
 - (void)loadStarControlInHeader
 {
-    _lbl_rate.text = [NSString stringWithFormat:@"Rating : %0.1f", [objPlaceDetail.placeRating doubleValue]];
+    _lbl_rate.text = [NSString stringWithFormat:@"Nota : %0.1f", [objPlaceDetail.placeRating doubleValue]];
 }
 -(void) ratingUserInterfaceEnable:(BOOL)isEnable
 {
@@ -584,7 +584,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 {
     RatingListTableViewCell *cellRateLabel = (RatingListTableViewCell *)[_tbl_ratings viewWithTag:rateView.tag];
     cellRateLabel.lbl_percentage.text = [NSString stringWithFormat:@"%@", rate];
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"rate%d:%@", rateView.tag, rate], @"rate", nil];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"Vote%d:%@", rateView.tag, rate], @"rate", nil];
     [marrRatingStore addObject:dict];
 }
 
@@ -618,7 +618,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 
 - (IBAction)btn_Claim_Action:(UIButton *)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Check Data" message:@"Is this property belongs to you?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Confirme os dados" message:@"Essa propriedade é sua?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     [alertView show];
 
 }
@@ -654,7 +654,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 {
     _txt_command_title.text=@"";
     _txt_commentDescription.textColor = [UIColor lightGrayColor];
-    _txt_commentDescription.text=@"Comment";
+    _txt_commentDescription.text=@"Comentário";
     _scrollview_rateandcommand.hidden=YES;
 }
 
@@ -735,7 +735,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
     {
         _pageCount = (_numPages>0)?1:0;
     }
-    [_lbl_page setText:[NSString stringWithFormat:@"Page : %lu",(unsigned long)_pageCount]];
+    [_lbl_page setText:[NSString stringWithFormat:@"Página : %lu",(unsigned long)_pageCount]];
     _page_controller.currentPage = _pageCount-1;
     [_tbl_CommandsList reloadData];
 }
@@ -795,7 +795,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
      NSData *data=[NSData dataWithContentsOfURL:url options:kNilOptions error:&error];
     
     if (error) {
-        [[[UIAlertView alloc] initWithTitle:@"Opine" message:@"Error in connection." delegate:nil cancelButtonTitle:@"Ok"otherButtonTitles: nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"Opine" message:@"Erro in connection." delegate:nil cancelButtonTitle:@"Ok"otherButtonTitles: nil] show];
     }
     else
     {
@@ -893,10 +893,10 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
               NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
               if ([[dictTemp valueForKey:@"Message"] isEqualToString:@"Success"]) {
                   [self getPlaceDetails:placeID];
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You" message:@"Your Rate & Comment is Submitted." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Obrigado" message:@"Voto e Comentário Enviado." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
               } else {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your Rate & Comment not Submitted, Please give it again." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Seu voto não foi enviado. Tente novamente." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
               }
               [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -904,7 +904,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
           failure:^(AFHTTPRequestOperation *operation, NSError *error)
               {
               if (error) {
-                  NSLog(@"storeRateAndComment error = %@", error);
+                  NSLog(@"storeRateAndComment Erro = %@", error);
               }
               [MBProgressHUD hideHUDForView:self.view animated:YES];
           }];
@@ -991,7 +991,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
-    if ([textView.text isEqualToString:@"Comment"])
+    if ([textView.text isEqualToString:@"Comentário"])
     {
         textView.text = @"";
         textView.textColor = [UIColor blackColor];

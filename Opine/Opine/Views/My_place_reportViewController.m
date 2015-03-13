@@ -47,8 +47,8 @@
     
     objAppDelegate = [UIApplication sharedApplication].delegate;
     
-    [self performSelector:@selector(service_count:) withObject:@"None" afterDelay:0.2];
-    [self performSelector:@selector(webservice_load_webview:) withObject:@"None" afterDelay:0.2];
+    [self performSelector:@selector(service_count:) withObject:@"Nenhum" afterDelay:0.2];
+    [self performSelector:@selector(webservice_load_webview:) withObject:@"Nenhum" afterDelay:0.2];
     
     array_comment = [NSMutableArray new];
     array_date = [NSMutableArray new];
@@ -111,19 +111,19 @@
     
     str_shorting_type = str_type;
     
-    if ([str_type isEqualToString:@"Week"])
+    if ([str_type isEqualToString:@"Semana"])
     {
         dic = @{ @"place_id" :[NSString stringWithFormat:@"%d",_str_placeid],
                  @"type"    : @"w",
                  };
     }
-    else if ([str_type isEqualToString:@"Year"])
+    else if ([str_type isEqualToString:@"Ano"])
     {
         dic = @{ @"place_id" :[NSString stringWithFormat:@"%d",_str_placeid],
                  @"type"    : @"y",
                  };
     }
-    else if ([str_type isEqualToString:@"Month"])
+    else if ([str_type isEqualToString:@"Mês"])
     {
         dic = @{ @"place_id" :[NSString stringWithFormat:@"%d",_str_placeid],
                  @"type"    : @"m",
@@ -156,8 +156,8 @@
         lbl_comment_count.text = [NSString stringWithFormat:@"%d", [[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Comment"] count]];
         lbl_rate_count.text = [NSString stringWithFormat:@"%d",  [[[dic_response valueForKeyPath:@"Comments"] valueForKey:@"Com_Comment"] count]];
         lbl_average_rate.text = [dic_response valueForKeyPath:@"Place.Rating"];
-        likeCount.text = [NSString stringWithFormat:@"(%@)",[dic_response valueForKeyPath:@"Place.Repeat_No"]];
-        unlikeCount.text = [NSString stringWithFormat:@"(%@)",[dic_response valueForKeyPath:@"Place.Repeat_Yes"]];
+        likeCount.text = [NSString stringWithFormat:@"(%@)",[dic_response valueForKeyPath:@"Place.Repeat_Yes"]];
+        unlikeCount.text = [NSString stringWithFormat:@"(%@)",[dic_response valueForKeyPath:@"Place.Repeat_No"]];
         commentRatingArray = [dic_response valueForKeyPath:@"Place.CommentRating"];
     }
     else
@@ -174,17 +174,17 @@
     str_shorting_type = str_type;
     
     NSURL *url;
-    if ([str_type isEqualToString:@"Week"])
+    if ([str_type isEqualToString:@"Semana"])
     {
-        str_type = @"Week";
+        str_type = @"Semana";
     }
-    else if ([str_type isEqualToString:@"Year"])
+    else if ([str_type isEqualToString:@"Ano"])
     {
-        str_type = @"Year";
+        str_type = @"Ano";
     }
-    else if ([str_type isEqualToString:@"Month"])
+    else if ([str_type isEqualToString:@"Mês"])
     {
-        str_type = @"Month";
+        str_type = @"Mês";
     }
     else
     {
@@ -352,7 +352,7 @@
 - (IBAction)btn_drop_down_action:(id)sender
 {
     objAppDelegate.isSorting = YES;
-    NSMutableArray *array = [[NSMutableArray alloc]initWithObjects:@"None",@"Week",@"Month",@"Year",nil];
+    NSMutableArray *array = [[NSMutableArray alloc]initWithObjects:@"Nenhum",@"Semana",@"Mês",@"Ano",nil];
     
     if(dropDown == nil)
     {
@@ -400,27 +400,27 @@
     if (isfrom_comment)
     {
         str_url = @"http://opine.com.br/OpineAPI/api/myplace/commentreportshare?";
-        if ([str_shorting_type isEqualToString:@"None"])
+        if ([str_shorting_type isEqualToString:@"Nenhum"])
         {
             dic = @{ @"Pla_Id" :[NSString stringWithFormat:@"%d",_str_placeid],
                      @"Usr_SessionID"    : objAppDelegate.userSessionID
                      };
         }
-        else if ([str_shorting_type isEqualToString:@"Week"])
+        else if ([str_shorting_type isEqualToString:@"Semana"])
         {
             dic = @{ @"Pla_Id" :[NSString stringWithFormat:@"%d",_str_placeid],
                      @"Usr_SessionID"    : objAppDelegate.userSessionID,
                      @"type" : @"w"
                      };
         }
-        else if ([str_shorting_type isEqualToString:@"Month"])
+        else if ([str_shorting_type isEqualToString:@"Mês"])
         {
             dic = @{ @"Pla_Id" :[NSString stringWithFormat:@"%d",_str_placeid],
                      @"Usr_SessionID"    : objAppDelegate.userSessionID,
                      @"type" : @"m"
                      };
         }
-        else if ([str_shorting_type isEqualToString:@"Year"])
+        else if ([str_shorting_type isEqualToString:@"Ano"])
         {
             dic = @{ @"Pla_Id" :[NSString stringWithFormat:@"%d",_str_placeid],
                      @"Usr_SessionID"    : objAppDelegate.userSessionID,
@@ -431,27 +431,27 @@
     else
     {
         str_url = @"http://opine.com.br/OpineAPI/api/graph/share?";
-        if ([str_shorting_type isEqualToString:@"None"])
+        if ([str_shorting_type isEqualToString:@"Nenhum"])
         {
             dic = @{ @"Pla_Id" :[NSString stringWithFormat:@"%d",_str_placeid],
                      @"Usr_SessionID"    : objAppDelegate.userSessionID
                      };
         }
-        else if ([str_shorting_type isEqualToString:@"Week"])
+        else if ([str_shorting_type isEqualToString:@"Semana"])
         {
             dic = @{ @"Pla_Id" :[NSString stringWithFormat:@"%d",_str_placeid],
                      @"Usr_SessionID"    : objAppDelegate.userSessionID,
                      @"type" : @"w"
                      };
         }
-        else if ([str_shorting_type isEqualToString:@"Month"])
+        else if ([str_shorting_type isEqualToString:@"Mês"])
         {
             dic = @{ @"Pla_Id" :[NSString stringWithFormat:@"%d",_str_placeid],
                      @"Usr_SessionID"    : objAppDelegate.userSessionID,
                      @"type" : @"m"
                      };
         }
-        else if ([str_shorting_type isEqualToString:@"Year"])
+        else if ([str_shorting_type isEqualToString:@"Ano"])
         {
             dic = @{ @"Pla_Id" :[NSString stringWithFormat:@"%d",_str_placeid],
                      @"Usr_SessionID"    : objAppDelegate.userSessionID,

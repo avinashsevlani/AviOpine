@@ -380,7 +380,7 @@
     if (split_array < [array_comment count] - 1)
     {
         split_array ++;
-        lbl_pagecount.text = [NSString stringWithFormat:@"Page: %d", (split_array+1)];
+        lbl_pagecount.text = [NSString stringWithFormat:@"Página: %d", (split_array+1)];
         [tbl_place_details reloadData];
     }
 }
@@ -392,7 +392,7 @@
     if (split_array > 0)
     {
         split_array --;
-        lbl_pagecount.text = [NSString stringWithFormat:@"Page: %d", (split_array+1)];
+        lbl_pagecount.text = [NSString stringWithFormat:@"Página: %d", (split_array+1)];
         [tbl_place_details reloadData];
     }
 }
@@ -475,7 +475,7 @@
     str_comment_id = array_comment_id [split_array][button.tag];
     lbl_ans_place.text = lbl_place_tittle.text;
 //    lbl_ans_address.text =[NSString stringWithFormat:@"%@", array_comment [button.tag]];
-    txtv_ans_address.text =[NSString stringWithFormat:@"Comment:\n%@", array_comment [split_array][button.tag]];
+    txtv_ans_address.text =[NSString stringWithFormat:@"Comentário:\n%@", array_comment [split_array][button.tag]];
     txtv_answer.text =[NSString stringWithFormat:@"%@", array_comment_reply [split_array][button.tag]];
     scroll_answer_View.hidden = NO;
 }

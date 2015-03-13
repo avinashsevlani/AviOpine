@@ -130,15 +130,15 @@
     if (objAppDelegate.isLogin)
     {
         if (objAppDelegate.ispaid_user) {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre Nós", nil];
         } else {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"About US", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre Nós", nil];
         }
         
     }
     else
     {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"About US", nil];
+        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre Nós", nil];
     }
 }
 
@@ -166,7 +166,7 @@
 - (IBAction)btn_sorting_place:(id)sender
 {
     objAppDelegate.isSorting = YES;
-    NSMutableArray *array = [[NSMutableArray alloc]initWithObjects:@"None",@"Rating",@"Ascending",@"Descending",nil];
+    NSMutableArray *array = [[NSMutableArray alloc]initWithObjects:@"Nenhum",@"Nota",@"Crescente",@"Decrescente",nil];
     
     if(dropDown == nil)
     {
@@ -186,29 +186,29 @@
     [self rel];
     if (isNone)
     {
-        [btn_shorting setTitle:@"Sorting Place" forState:UIControlStateNormal];
+        [btn_shorting setTitle:@"Ordenar" forState:UIControlStateNormal];
     }
      [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self performSelector:@selector(shorting:) withObject:sender afterDelay:0.2];
 }
 -(void) shorting : (NIDropDown *) sender
 {
-    if ([sender.nameTitle isEqual:@"Ascending"])
+    if ([sender.nameTitle isEqual:@"Crescente"])
     {
-        [btn_shorting setTitle:@"Ascending" forState:UIControlStateNormal];
+        [btn_shorting setTitle:@"Crescente" forState:UIControlStateNormal];
         dic =  [self webservice_to_save_claim : @"http://opine.com.br/OpineAPI/application/controllers/api/placeid.php?user_id=%@&type=1" : nil];
     }
-    else if ([sender.nameTitle isEqual:@"Descending"])
+    else if ([sender.nameTitle isEqual:@"Decrescente"])
     {
-        [btn_shorting setTitle:@"Descending" forState:UIControlStateNormal];
+        [btn_shorting setTitle:@"Decrescente" forState:UIControlStateNormal];
         dic =  [self webservice_to_save_claim : @"http://opine.com.br/OpineAPI/application/controllers/api/placeid.php?user_id=%@&type=2" : nil];
     }
-    else if ([sender.nameTitle isEqual:@"Rating"])
+    else if ([sender.nameTitle isEqual:@"Nota"])
     {
-        [btn_shorting setTitle:@"Rating" forState:UIControlStateNormal];
+        [btn_shorting setTitle:@"Nota" forState:UIControlStateNormal];
          dic =  [self webservice_to_save_claim : @"http://opine.com.br/OpineAPI/application/controllers/api/placeid.php?user_id=%@&type=4" : nil];
     }
-    else if ([sender.nameTitle isEqual:@"None"])
+    else if ([sender.nameTitle isEqual:@"Nenhum"])
     {
         dic =  [self webservice_to_save_claim : @"http://opine.com.br/OpineAPI/application/controllers/api/placeid.php?user_id=%@" : nil];
     }

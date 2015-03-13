@@ -48,7 +48,7 @@ bool isPlaceByCategoryDone = NO;
 {
     [super viewDidLoad];
     if (![self isInternetAvailable]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Internet Unavailable" message:@"Please check your Internet Connection." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Internet Unavailable" message:@"Please check your Internet Connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         return;
     }
@@ -132,15 +132,15 @@ bool isPlaceByCategoryDone = NO;
     if (objAppDelegate.isLogin)
     {
         if (objAppDelegate.ispaid_user) {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre Nós", nil];
         } else {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"About US", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre Nós", nil];
         }
         
     }
     else
     {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"About US", nil];
+        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre Nós", nil];
     }
     [(SettingViewController *)self.slidingViewController.underLeftViewController setMarrSetting:marrSettingItem];
 }
@@ -303,15 +303,15 @@ bool isPlaceByCategoryDone = NO;
     if (objAppDelegate.isLogin)
     {
         if (objAppDelegate.ispaid_user) {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre Nós", nil];
         } else {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"About US", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre Nós", nil];
         }
         
     }
     else
     {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"About US", nil];
+        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre Nós", nil];
     }
     [(SettingViewController *)self.slidingViewController.underLeftViewController setMarrSetting:marrSettingItem];
     [self.slidingViewController anchorTopViewTo:ECRight];
@@ -331,15 +331,15 @@ bool isPlaceByCategoryDone = NO;
     if (objAppDelegate.isLogin)
     {
         if (objAppDelegate.ispaid_user) {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre Nós", nil];
         } else {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"About US", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre Nós", nil];
         }
 
     }
     else
     {
-         marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"About US", nil];
+         marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre Nós", nil];
     }
 }
 
@@ -399,15 +399,15 @@ bool isPlaceByCategoryDone = NO;
             if (objAppDelegate.isLogin)
             {
                 if (objAppDelegate.ispaid_user) {
-                    marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"My Places", @"About US", nil];
+                    marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre Nós", nil];
                 } else {
-                    marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"My Profile",@"About US", nil];
+                    marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre Nós", nil];
                 }
                 
             }
             else
             {
-                marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"About US", nil];
+                marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre Nós", nil];
             }
 
             [(SettingViewController *)self.slidingViewController.underLeftViewController setMarrSetting:marrSettingItem];
@@ -422,15 +422,15 @@ bool isPlaceByCategoryDone = NO;
 - (void)openViewBySetting:(NSInteger)settingID
 {
     [self.slidingViewController resetTopView];
-    if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"About US"]) {
+    if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"Sobre Nós"]) {
         vwAboutUs.hidden = NO;
-    } else if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"My Places"])
+    } else if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"Meus Lugares"])
     {
         My_Places_ViewController *controller = [[My_Places_ViewController alloc] initWithNibName:@"My_Places_ViewController" bundle:nil];
         [self presentViewController:controller animated:YES completion:nil];
         
         
-    } else if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"My Profile"]) {
+    } else if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"Meu Perfil"]) {
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         ProfileViewController *objProfileViewController = [storyBoard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
         [self presentViewController:objProfileViewController animated:YES completion:nil];
@@ -496,7 +496,7 @@ bool isPlaceByCategoryDone = NO;
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if (error) {
-                  NSLog(@"getCatagory error = %@", error);
+                  NSLog(@"getCatagory Erro = %@", error);
               }
               [MBProgressHUD hideHUDForView:self.view animated:YES];
           }];

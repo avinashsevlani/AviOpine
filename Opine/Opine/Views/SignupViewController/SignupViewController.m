@@ -51,7 +51,7 @@
 {
     if (buttonIndex == 1) {
         if (![OpineModel validateEmail:[[alertView textFieldAtIndex:0] text]]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your email is not Valid, Please check." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Your email is not Valid, Please check." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
             return;
         }
@@ -63,17 +63,17 @@
 {
     NSString *alertMessage, *alertTitle;
     if ([FBErrorUtility shouldNotifyUserForError:error]) {
-        alertTitle = @"Facebook error";
+        alertTitle = @"Facebook Erro";
         alertMessage = [FBErrorUtility userMessageForError:error];
     } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession) {
-        alertTitle = @"Session Error";
+        alertTitle = @"Session Erro";
         alertMessage = @"Your current session is no longer valid. Please log in again.";
     } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
         NSLog(@"user cancelled login");
     } else {
         alertTitle  = @"Something went wrong";
         alertMessage = @"Please try again later.";
-        NSLog(@"Unexpected error:%@", error);
+        NSLog(@"Unexpected Erro:%@", error);
     }
     if (alertMessage) {
         [[[UIAlertView alloc] initWithTitle:alertTitle message:alertMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
@@ -94,12 +94,12 @@
 - (IBAction)btnSubmitTapped:(id)sender
 {
     if ([txtUserNameSignUp.text isEqual:@""] || [txtPasswordSignUp.text isEqual:@""] || [txtConfirmPassword.text isEqual:@""] || [txtFirstName.text isEqual:@""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please fill all Data which are Required for Sign Up" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Please fill all Data which are Required for Cadastre-se" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         return;
     }
     if (![OpineModel validateEmail:txtUserNameSignUp.text]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your email is not Valid, Please check." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Your email is not Valid, Please check." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         [txtUserNameSignUp setText:@""];
         return;
@@ -136,12 +136,12 @@
 - (IBAction)btnLoginTapped:(id)sender
 {
     if ([txtUserName.text isEqual:@""] || [txtPassword.text isEqual:@""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please Enter Username and Password both." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Please Enter Username and Password both." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         return;
     }
     if (![OpineModel validateEmail:txtUserName.text]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your email is not Valid, Please check." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Your email is not Valid, Please check." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         [txtUserName setText:@""];
         return;
@@ -152,7 +152,7 @@
 - (IBAction) checkConfirmPassword:(id)sender
 {
     if (![txtPasswordSignUp.text isEqualToString:[txtConfirmPassword text]]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password & Confirm Password must be Same." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Password & Confirm Password must be Same." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         [txtConfirmPassword setText:@""];
     }
@@ -170,7 +170,7 @@
 
 - (IBAction)btnForgoPasswordTapped:(id)sender
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter Registerd Email ID" message:@"We will send Password on Registered Email" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Okay", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email" message:@"Enviaremos senha ao email cadastrado" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"OK", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
 }
@@ -231,7 +231,7 @@
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if (error) {
-                  NSLog(@"checkFBloginOrSignUp error = %@", error);
+                  NSLog(@"checkFBloginOrSignUp Erro = %@", error);
                   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
               }
           }];
@@ -249,15 +249,15 @@
               NSLog(@"checkNormalLogin responseObject = %@", [NSString stringWithUTF8String:[responseObject bytes]]);
               NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
               NSString *data = [dictTemp valueForKey:@"Message"];
-              if ([data isEqual:@"Error"]) {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Username & Password is Invalid. There are no such user with it." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+              if ([data isEqual:@"Erro"]) {
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Username & Password is Invalid. There are no such user with it." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
                   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                   return;
               }
               else if ([dictTemp valueForKey:@"MessageInfo"])
               {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[dictTemp valueForKey:@"MessageInfo"]delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[dictTemp valueForKey:@"MessageInfo"]delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
               }
               objAppDelegate.marrUserData = [[NSMutableArray alloc] init];
@@ -285,7 +285,7 @@
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if (error) {
-                  NSLog(@"checkNormalLogin error = %@", error);
+                  NSLog(@"checkNormalLogin Erro = %@", error);
               }
               [MBProgressHUD hideHUDForView:self.view animated:YES];
           }];
@@ -307,19 +307,19 @@
                   btnSubmit.hidden = YES;
                   if ([dictTemp valueForKey:@"MessageInfo"])
                   {
-                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[dictTemp valueForKey:@"MessageInfo"] delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[dictTemp valueForKey:@"MessageInfo"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                       [alert show];
 
                   }
                 } else {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please choose another Email. This email already Register." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Please choose another Email. This email already Register." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
               }
               [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               if (error) {
-                  NSLog(@"saveSignUpData error = %@", error);
+                  NSLog(@"saveSignUpData Erro = %@", error);
                   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
               }
           }];
@@ -337,10 +337,10 @@
               NSLog(@"sendEmailForFogotPassword responseObject = %@", [NSString stringWithUTF8String:[responseObject bytes]]);
               NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
               if ([[dictTemp valueForKey:@"Message"] isEqualToString:@"Success"]) {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Now, check your email address for Password." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Now, check your email address for Password." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];;
               } else {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please try again with Registerd Email address." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Please try again with Registerd Email address." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
               }
               [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

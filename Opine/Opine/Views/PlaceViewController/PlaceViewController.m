@@ -212,7 +212,7 @@ bool isViewDidLoad = NO;
     _pageCount++;
     [self.tblPlace setTag:_pageCount];
     [self.tblPlace reloadData];
-    [lblPageNumber setText:[NSString stringWithFormat:@"Page : %lu", (unsigned long)_pageCount]];
+    [lblPageNumber setText:[NSString stringWithFormat:@"Página : %lu", (unsigned long)_pageCount]];
     pagingTable.currentPage = _pageCount-1;
 }
 
@@ -224,7 +224,7 @@ bool isViewDidLoad = NO;
     _pageCount--;
     [self.tblPlace setTag:_pageCount];
     [self.tblPlace reloadData];
-    [lblPageNumber setText:[NSString stringWithFormat:@"Page : %lu", (unsigned long)_pageCount]];
+    [lblPageNumber setText:[NSString stringWithFormat:@"Página : %lu", (unsigned long)_pageCount]];
     pagingTable.currentPage = _pageCount-1;
 }
 
@@ -251,7 +251,7 @@ bool isViewDidLoad = NO;
     } else {
         [self getPlaceByCategoryAndSearch:0 searchText:self.searchWord];
     }
-    marrSortingThing = [[NSMutableArray alloc] initWithObjects:@"None", @"Rating", @"Ascending", @"Descending", nil];
+    marrSortingThing = [[NSMutableArray alloc] initWithObjects:@"Nenhum", @"Nota", @"Crescente", @"Decrescente", nil];
 }
 
 -(void) fillData
@@ -294,7 +294,7 @@ bool isViewDidLoad = NO;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self rel];
     if (isNone) {
-        [btnSortingPlace setTitle:@"Sorting Place" forState:UIControlStateNormal];
+        [btnSortingPlace setTitle:@"Ordenar" forState:UIControlStateNormal];
     }
     [self performSelector:@selector(sortTable:) withObject:sender afterDelay:0.1];
 }
@@ -302,19 +302,19 @@ bool isViewDidLoad = NO;
 -(void) sortTable:(NIDropDown *)sender
 {
     NSArray *sortedArray;
-    if ([sender.nameTitle isEqual:@"Ascending"]) {
+    if ([sender.nameTitle isEqual:@"Crescente"]) {
         NSSortDescriptor *sortDescriptor;
         sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"_placeName"
                                                      ascending:YES];
         NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         sortedArray = [objAppDelegate.marrPlace sortedArrayUsingDescriptors:sortDescriptors];
-    } else if ([sender.nameTitle isEqual:@"Descending"]) {
+    } else if ([sender.nameTitle isEqual:@"Decrescente"]) {
         NSSortDescriptor *sortDescriptor;
         sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"_placeName"
                                                      ascending:NO];
         NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         sortedArray = [objAppDelegate.marrPlace sortedArrayUsingDescriptors:sortDescriptors];
-    } else if ([sender.nameTitle isEqual:@"Rating"]) {
+    } else if ([sender.nameTitle isEqual:@"Nota"]) {
         NSSortDescriptor *sortDescriptor;
         
         sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"_placeRating"
@@ -348,7 +348,7 @@ bool isViewDidLoad = NO;
             marr = [[NSMutableArray alloc] init];
         }
     }
-    [lblPageNumber setText:@"Page : 1"];
+    [lblPageNumber setText:@"Página : 1"];
     [dictPlaces setValue:marr forKey:[NSString stringWithFormat:@"%d", pagenumber]];
     self.pagingTable.currentPage = _pageCount-1;
     self.pagingTable.numberOfPages = _numPages;

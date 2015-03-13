@@ -201,7 +201,7 @@
 //    imgView = [[UIImageView alloc] initWithImage:c.imageView.image];
 //    imgView.frame = CGRectMake(5, 5, 25, 25);
 //    [btnSender addSubview:imgView];
-    if ([c.textLabel.text isEqual:@"All"] || [c.textLabel.text isEqual:@"None"]) {
+    if ([c.textLabel.text isEqual:@"All"] || [c.textLabel.text isEqual:@"Nenhum"]) {
         [self myDelegate:YES];
     } else {        
         [self myDelegate:NO];

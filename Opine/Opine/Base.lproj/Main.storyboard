@@ -127,7 +127,7 @@
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="imgDropArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Seu-Bp-H3c">
                                 <rect key="frame" x="287" y="94" width="12" height="11"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mD3-s1-jy4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Busca" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mD3-s1-jy4">
                                 <rect key="frame" x="16" y="83" width="568" height="30"/>
                                 <color key="backgroundColor" red="0.56395351890000001" green="0.74418604369999997" blue="0.74418604369999997" alpha="0.67450982329999998" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -136,7 +136,7 @@
                                     <outlet property="delegate" destination="07m-mM-Jrd" id="E0X-f1-d3u"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEAR ME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-UQ-dUF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POR PERTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-UQ-dUF">
                                 <rect key="frame" x="155" y="150" width="290" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="HxW-Le-qiG"/>
@@ -305,7 +305,7 @@
                                     <outlet property="delegate" destination="07m-mM-Jrd" id="1Hq-c7-igg"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CHOOSE YOUR CATEGORY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-J1-8pp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ESCOLHA A CATEGORIA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-J1-8pp">
                                 <rect key="frame" x="158" y="338" width="285" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -380,7 +380,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mr-oO-PyT">
                                         <rect key="frame" x="20" y="7" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Back">
+                                        <state key="normal" title="Voltar">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -388,7 +388,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <action selector="btnBackAboutUsTapped:" destination="07m-mM-Jrd" eventType="touchUpInside" id="qNS-HI-5JD"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leJ-Ff-qKc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sobre Nós" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leJ-Ff-qKc">
                                         <rect key="frame" x="257" y="10" width="86" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="highlightedColor"/>
@@ -637,7 +637,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                                                 <constraint firstAttribute="width" constant="88" id="vkE-7R-bn2"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <state key="normal" title="read more" backgroundImage="imgButtonBack.png">
+                                                            <state key="normal" title="Leia Mais" backgroundImage="imgButtonBack.png">
                                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
@@ -697,7 +697,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <outlet property="delegate" destination="8dx-lP-kmN" id="s4Z-bw-fcK"/>
                                         </connections>
                                     </tableView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page : 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1b-lb-s1i">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Página : 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1b-lb-s1i">
                                         <rect key="frame" x="257" y="291" width="89" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="89" id="KwC-qG-hTo"/>
@@ -747,7 +747,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgWhiteBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Aq-e5-cxv">
                                                 <rect key="frame" x="0.0" y="-1" width="568" height="47"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Repeat ?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6LL-oG-fhG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Voltaria ?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6LL-oG-fhG">
                                                 <rect key="frame" x="8" y="13" width="70" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -822,7 +822,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <constraint firstAttribute="height" constant="23" id="B5L-TO-Bdi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="Claim" backgroundImage="imgButtonBack.png">
+                                        <state key="normal" title="Sou o Dono!" backgroundImage="imgButtonBack.png">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -842,7 +842,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                                     <action selector="btnResignKeyBoard:" destination="8dx-lP-kmN" eventType="touchUpInside" id="BnU-Ei-rDx"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Comment Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wew-qT-fdj">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titúlo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wew-qT-fdj">
                                                 <rect key="frame" x="0.0" y="26" width="568" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -857,7 +857,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                                     <constraint firstAttribute="width" constant="140" id="i1o-5D-wp7"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <state key="normal" title="Submit Now" backgroundImage="imgButtonBack.png">
+                                                <state key="normal" title="Enviar" backgroundImage="imgButtonBack.png">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -865,13 +865,13 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                                     <action selector="btnSubmitNowTapped:" destination="8dx-lP-kmN" eventType="touchUpInside" id="S23-pB-Jjf"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsd-ec-H5S">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comentário" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsd-ec-H5S">
                                                 <rect key="frame" x="242" y="0.0" width="85" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share this" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czn-IR-DPk">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compartilhe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czn-IR-DPk">
                                                 <rect key="frame" x="20" y="260" width="60" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="9zZ-XT-RXG"/>
@@ -1106,7 +1106,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="height" constant="22" id="8Mr-LF-sDf"/>
                                     <constraint firstAttribute="width" constant="44" id="NYn-ek-XaE"/>
                                 </constraints>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Voltar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1119,7 +1119,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="height" constant="22" id="Di2-U8-ghP"/>
                                     <constraint firstAttribute="width" constant="60" id="xY0-4p-avO"/>
                                 </constraints>
-                                <state key="normal" title="Share">
+                                <state key="normal" title="Compartilhe">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1129,7 +1129,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6l-q6-2BL">
                                 <rect key="frame" x="15" y="179" width="580" height="406"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb6-Qu-uJT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comentário :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb6-Qu-uJT">
                                         <rect key="frame" x="8" y="8" width="90" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="bf8-z3-9So"/>
@@ -1145,7 +1145,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <constraint firstAttribute="width" constant="81" id="P10-eM-5RT"/>
                                             <constraint firstAttribute="height" constant="19" id="ibm-Ah-xK9"/>
                                         </constraints>
-                                        <state key="normal" title="Close" backgroundImage="imgButtonBack.png">
+                                        <state key="normal" title="Fechar" backgroundImage="imgButtonBack.png">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1322,7 +1322,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="height" constant="22" id="lHO-Rh-eSx"/>
                                     <constraint firstAttribute="width" constant="44" id="xIp-xG-wxh"/>
                                 </constraints>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Voltar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1352,7 +1352,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <action selector="btnFBLoginTapped:" destination="U5G-Zh-RGx" eventType="touchUpInside" id="8h7-x2-sAl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SignUp with :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hg4-8c-1lr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar com :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hg4-8c-1lr">
                                 <rect key="frame" x="16" y="80" width="108" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="0w7-10-egy"/>
@@ -1365,7 +1365,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuR-f5-ZTV">
                                 <rect key="frame" x="0.0" y="115" width="600" height="539"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Email :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4K-6b-ZIN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4K-6b-ZIN">
                                         <rect key="frame" x="41" y="35" width="107" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="107" id="Eft-1l-zn7"/>
@@ -1375,7 +1375,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc8-Nu-r9H">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc8-Nu-r9H">
                                         <rect key="frame" x="41" y="107" width="107" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="107" id="Ccs-u5-6Bb"/>
@@ -1385,7 +1385,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygu-HY-EYr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirme Senha :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygu-HY-EYr">
                                         <rect key="frame" x="41" y="180" width="164" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="52f-I1-W9u"/>
@@ -1395,7 +1395,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IM-he-JKE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IM-he-JKE">
                                         <rect key="frame" x="41" y="252" width="107" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="p6E-wD-1Ju"/>
@@ -1445,7 +1445,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Td6-lS-yEe">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Td6-lS-yEe">
                                         <rect key="frame" x="25" y="59" width="550" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
@@ -1462,7 +1462,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <outlet property="delegate" destination="U5G-Zh-RGx" id="Kkh-tQ-jOc"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHY-lV-CUp">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Favor confirmar Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHY-lV-CUp">
                                         <rect key="frame" x="25" y="204" width="550" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -1471,7 +1471,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <outlet property="delegate" destination="U5G-Zh-RGx" id="mcz-lP-H24"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4X-qm-SQV">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4X-qm-SQV">
                                         <rect key="frame" x="25" y="276" width="550" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -1479,7 +1479,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <outlet property="delegate" destination="U5G-Zh-RGx" id="Hhm-pL-RXi"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Required Field" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v07-03-B7v">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Campo Obrigatório" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v07-03-B7v">
                                         <rect key="frame" x="455" y="16" width="130" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="9W6-Ij-7Ze"/>
@@ -1536,7 +1536,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="width" constant="65" id="D7K-TO-ytv"/>
                                     <constraint firstAttribute="height" constant="22" id="qSV-N9-Hoa"/>
                                 </constraints>
-                                <state key="normal" title="Submit">
+                                <state key="normal" title="Enviar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1553,7 +1553,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zvn-Xf-Fyc">
                                 <rect key="frame" x="0.0" y="61" width="600" height="539"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMN-cv-1O5">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMN-cv-1O5">
                                         <rect key="frame" x="19" y="67" width="563" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
@@ -1562,7 +1562,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <outlet property="delegate" destination="U5G-Zh-RGx" id="1d0-Fe-xnr"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tna-Ma-7gx">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tna-Ma-7gx">
                                         <rect key="frame" x="19" y="105" width="563" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -1577,7 +1577,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <constraint firstAttribute="height" constant="24" id="CDq-G2-uML"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                        <state key="normal" title="Sign Up" backgroundImage="imgRectangleButton.png">
+                                        <state key="normal" title="Cadastre-se" backgroundImage="imgRectangleButton.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1585,7 +1585,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <action selector="btnSignUpHereTapped:" destination="U5G-Zh-RGx" eventType="touchUpInside" id="QLA-BH-lKc"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have Account !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhG-sW-LPR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Não tem conta !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhG-sW-LPR">
                                         <rect key="frame" x="404" y="151" width="108" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1598,7 +1598,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <constraint firstAttribute="width" constant="137" id="usn-5i-meZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <state key="normal" title="Forgot Password ?" backgroundImage="imgRectangleButton.png">
+                                        <state key="normal" title="Esqueci a Senha ?" backgroundImage="imgRectangleButton.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1642,7 +1642,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <action selector="btnFBLoginTapped:" destination="U5G-Zh-RGx" eventType="touchUpInside" id="EyR-qr-RwL"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Login with :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbN-P3-PCR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Login com :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbN-P3-PCR">
                                         <rect key="frame" x="19" y="16" width="96" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1755,7 +1755,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="height" constant="50" id="Zdv-EC-wWX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94L-W2-qOc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meu Perfil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94L-W2-qOc">
                                 <rect key="frame" x="34" y="80" width="550" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="91E-Ku-kvP"/>
@@ -1769,7 +1769,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="height" constant="22" id="V5w-k3-VKd"/>
                                     <constraint firstAttribute="width" constant="44" id="glc-mk-yhU"/>
                                 </constraints>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Voltar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1784,7 +1784,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="width" constant="65" id="gOY-kD-tra"/>
                                     <constraint firstAttribute="height" constant="22" id="gQ9-oQ-QVL"/>
                                 </constraints>
-                                <state key="normal" title="Submit">
+                                <state key="normal" title="Enviar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1794,7 +1794,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuI-gx-gUi">
                                 <rect key="frame" x="0.0" y="120" width="600" height="480"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHg-XL-dZt">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHg-XL-dZt">
                                         <rect key="frame" x="19" y="54" width="243" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="243" id="Jog-2Q-GyU"/>
@@ -1806,7 +1806,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <outlet property="delegate" destination="Y3Y-Ys-NOz" id="TuU-BH-lxr"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1n-xu-IAb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1n-xu-IAb">
                                         <rect key="frame" x="19" y="25" width="107" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="FdC-FB-QNi"/>
@@ -1823,7 +1823,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <constraint firstAttribute="width" constant="167" id="WmF-OE-MVn"/>
                                             <constraint firstAttribute="height" constant="30" id="xC9-Rz-aEW"/>
                                         </constraints>
-                                        <state key="normal" title="Change Password">
+                                        <state key="normal" title="Trocar Senha">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1838,7 +1838,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <constraint firstAttribute="height" constant="19" id="999-xv-RZV"/>
                                             <constraint firstAttribute="width" constant="112" id="Tmo-he-xxP"/>
                                         </constraints>
-                                        <state key="normal" title="Change Photo">
+                                        <state key="normal" title="Trocar foto">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1853,7 +1853,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <constraint firstAttribute="width" constant="98" id="WKz-ch-pDi"/>
                                         </constraints>
                                     </imageView>
-                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFM-8z-Ukv">
+                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nova Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFM-8z-Ukv">
                                         <rect key="frame" x="19" y="251" width="243" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -1861,7 +1861,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                             <outlet property="delegate" destination="Y3Y-Ys-NOz" id="TEN-1u-0hx"/>
                                         </connections>
                                     </textField>
-                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCd-H2-Ktl">
+                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirme Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SCd-H2-Ktl">
                                         <rect key="frame" x="19" y="289" width="243" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -1955,7 +1955,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="height" constant="22" id="bd2-gA-7lR"/>
                                     <constraint firstAttribute="width" constant="44" id="zjX-n3-JlV"/>
                                 </constraints>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Voltar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1976,7 +1976,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="height" constant="68" id="teJ-l4-ZqO"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30L-qr-6PL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30L-qr-6PL">
                                 <rect key="frame" x="123" y="119" width="422" height="30"/>
                                 <color key="backgroundColor" red="0.56395351890000001" green="0.74418604369999997" blue="0.74418604369999997" alpha="0.67450982329999998" colorSpace="deviceRGB"/>
                                 <constraints>
@@ -2040,7 +2040,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP1-oi-dsK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nota :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP1-oi-dsK">
                                                     <rect key="frame" x="76" y="67" width="55" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="55" id="Di0-fH-KeE"/>
@@ -2105,7 +2105,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="height" constant="22" id="5Wv-KD-T3Q"/>
                                     <constraint firstAttribute="width" constant="44" id="PDf-QI-eQl"/>
                                 </constraints>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Voltar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2113,7 +2113,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <action selector="btnCancelTapped:" destination="SI4-mA-zr1" eventType="touchUpInside" id="nza-wn-SHw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Here :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av6-GE-GTi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Busque aqui:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av6-GE-GTi">
                                 <rect key="frame" x="16" y="123" width="99" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2150,7 +2150,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <action selector="btnDecrementPage:" destination="SI4-mA-zr1" eventType="touchUpInside" id="mn5-Sh-8a3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page : 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVh-KX-UIl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Página : 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVh-KX-UIl">
                                 <rect key="frame" x="45" y="160" width="89" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Q5M-D0-Crf"/>
@@ -2192,7 +2192,7 @@ During the Napoleonic Wars, King João VI, fearing the advancing French armies, 
                                     <constraint firstAttribute="height" constant="30" id="Ztw-5Y-Fny"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Sorting Place" backgroundImage="imgRectangleButton.png">
+                                <state key="normal" title="Ordenar" backgroundImage="imgRectangleButton.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

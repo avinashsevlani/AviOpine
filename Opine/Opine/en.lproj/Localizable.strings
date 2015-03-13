@@ -1,0 +1,83 @@
+/* 
+  Localizable.strings
+  Opine
+
+  Created by Avinash Sevlani on 11/03/15.
+  Copyright (c) 2015 TheAppGururz. All rights reserved.
+*/
+"NEAR ME" = "POR PERTO"
+CHOOSE YOUR CATEGORY = ESCOLHA A CATEGORIA
+Login = Login
+About US = Sobre Nós
+Back = Voltar
+Login with = Login com
+Enter your Email = Email
+Enter your Password = Senha
+Don't have Account =Não tem conta
+Sign Up = Cadastre-se
+Forgot Password = Esqueci a Senha
+Submit =Enviar
+SignUp with = Cadastrar com
+Required Field = Campo Obrigatório
+User Email = Email
+Password = Senha
+Confirm Password = Confirme Senha
+Name = Nome
+Please confirm Password =Favor confirmar Senha
+Enter Name = Nome
+Enter Registered Email ID = Email
+We will send Password on Registered Email =Enviaremos senha ao email cadastrado
+Okay = OK
+Cancel = Cancelar
+Share =Compartilhe
+Repeat? =Voltaria?
+Claim = Sou o Dono!
+Rate =Vote
+Rate & Comment = Vote & Comente
+Page = Página
+My Profile = Meu Perfil
+My Places = Meus Lugares
+Change Photo =Trocar foto
+Change Password =Trocar Senha
+Enter New Password = Nova Senha
+Confirm Password = Confirme a Senha
+Edit =Editar
+Save =Salvar
+Place Name = Nome do Lugar
+Address =Endereço
+Zip Code = CEP
+City =Cidade
+State =Estado
+Photo =Foto
+Add Poll Fields (Optional) =Adicione Pergunta (opcional)
+Add Message (Optional) = Adicione Mensagem (opcional)
+Report =Relatório
+Reply =Responder
+Read More = Leia Mais
+Close =Fechar
+Comment = Comentário
+Comment Report = Relatório dos Comentários
+Graphical Report =Relatório Gráfico
+None = Nenhum
+Week =Semana
+Month = Mês
+Year =Ano
+Comment Title = Titúlo
+Share this =Compartilhe
+Submit Now =Enviar
+Your Rate & Comment not Submitted. Please give it again =Seu voto não foi enviado. Tente novamente.
+Thank You =Obrigado
+Your Rate & Comment is Submitted = Voto e Comentário Enviado
+Check Data =Confirme os dados
+Is this property belongs to you? = Essa propriedade é sua?
+Error = Erro
+Sorting Place = Ordenar
+None = Nenhum
+Rating = Nota
+Ascending = Crescente
+Descending =Decrescente
+Search Here =Busque aqui
+Search =Busca
+CNPJ Number = CNPJ
+Mobile Number =Celular
+Unique Number = Número Opine

@@ -119,7 +119,7 @@
                 NSLog(@"Purchase failed ");
                 if (transaction.error.code != SKErrorPaymentCancelled)
                 {
-                    NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
+                    NSLog(@"Transaction Erro: %@", transaction.error.localizedDescription);
                 }
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 //                _dtlBuyNowBtn.enabled = YES;
@@ -155,7 +155,7 @@
             
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
                                       [NSString stringWithFormat:@"Do you want to purchase '%@' by '%@' for price %@",validProduct.localizedTitle,validProduct.localizedDescription,validProduct.price] message:nil delegate:
-                                      self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Buy Now",nil];
+                                      self cancelButtonTitle:@"Cancelar" otherButtonTitles: @"Buy Now",nil];
             alertView.tag = 2222;
             [alertView show];
             

@@ -1,0 +1,225 @@
+
+/* Class = "IBUITextField"; placeholder = "Enter Password"; ObjectID = "205-ri-Q8V"; */
+"205-ri-Q8V.placeholder" = "Enter Password";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "2mr-oO-PyT"; */
+"2mr-oO-PyT.normalTitle" = "Back";
+
+/* Class = "IBUITextField"; placeholder = "Search"; ObjectID = "30L-qr-6PL"; */
+"30L-qr-6PL.placeholder" = "Search";
+
+/* Class = "IBUIButton"; normalTitle = "read more"; ObjectID = "3Uz-HP-Wu2"; */
+"3Uz-HP-Wu2.normalTitle" = "read more";
+
+/* Class = "IBUILabel"; text = "Must Visit Place!!"; ObjectID = "48j-OK-V5A"; */
+"48j-OK-V5A.text" = "Must Visit Place!!";
+
+/* Class = "IBUIButton"; normalTitle = "Close"; ObjectID = "5ds-qw-fiA"; */
+"5ds-qw-fiA.normalTitle" = "Close";
+
+/* Class = "IBUIButton"; normalTitle = "Share"; ObjectID = "5pJ-ei-ecb"; */
+"5pJ-ei-ecb.normalTitle" = "Share";
+
+/* Class = "IBUILabel"; text = "Repeat ?"; ObjectID = "6LL-oG-fhG"; */
+"6LL-oG-fhG.text" = "Repeat ?";
+
+/* Class = "IBUILabel"; text = "*"; ObjectID = "79z-Bb-7cz"; */
+"79z-Bb-7cz.text" = "*";
+
+/* Class = "IBUILabel"; text = "Name :"; ObjectID = "7IM-he-JKE"; */
+"7IM-he-JKE.text" = "Name :";
+
+/* Class = "IBUILabel"; text = "*"; ObjectID = "7h2-aS-20j"; */
+"7h2-aS-20j.text" = "*";
+
+/* Class = "IBUILabel"; text = "Location"; ObjectID = "8cR-Hz-8ci"; */
+"8cR-Hz-8ci.text" = "Location";
+
+/* Class = "IBUILabel"; text = "My Profile"; ObjectID = "94L-W2-qOc"; */
+"94L-W2-qOc.text" = "My Profile";
+
+/* Class = "IBUILabel"; text = "0%"; ObjectID = "9NL-Kz-eNH"; */
+"9NL-Kz-eNH.text" = "0%";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "Adj-kx-NtK"; */
+"Adj-kx-NtK.normalTitle" = "Back";
+
+/* Class = "IBUIButton"; normalTitle = "Claim"; ObjectID = "BDY-w2-ixo"; */
+"BDY-w2-ixo.normalTitle" = "Claim";
+
+/* Class = "IBUITextField"; placeholder = "Enter your Email"; ObjectID = "DMN-cv-1O5"; */
+"DMN-cv-1O5.placeholder" = "Enter your Email";
+
+/* Class = "IBUILabel"; text = "Don't have Account !"; ObjectID = "DhG-sW-LPR"; */
+"DhG-sW-LPR.text" = "Don't have Account !";
+
+/* Class = "IBUIButton"; normalTitle = "Yes"; ObjectID = "E1K-A5-vt9"; */
+"E1K-A5-vt9.normalTitle" = "Yes";
+
+/* Class = "IBUILabel"; text = "09/02/2014"; ObjectID = "EC6-5p-Lkg"; */
+"EC6-5p-Lkg.text" = "09/02/2014";
+
+/* Class = "IBUIButton"; normalTitle = "Change Photo"; ObjectID = "FC6-gd-ayo"; */
+"FC6-gd-ayo.normalTitle" = "Change Photo";
+
+/* Class = "IBUIButton"; normalTitle = "Choose Category"; ObjectID = "HVv-Kh-ifh"; */
+"HVv-Kh-ifh.normalTitle" = "Choose Category";
+
+/* Class = "IBUILabel"; text = "SignUp with :"; ObjectID = "Hg4-8c-1lr"; */
+"Hg4-8c-1lr.text" = "SignUp with :";
+
+/* Class = "IBUILabel"; text = "Brazil is the only Latin American nation that derives its language and culture from Portugal. The native inhabitants mostly consisted of the nomadic Tupí-Guaraní Indians. Adm. Pedro Alvares Cabral claimed the territory for Portugal in 1500. The early explorers brought back a wood that produced a red dye, pau-brasil, from which the land received its name. Portugal began colonization in 1532 and made the area a royal colony in 1549.\n\nDuring the Napoleonic Wars, King João VI, fearing the advancing French armies, fled Portugal in 1808 and set up his court in Rio de Janeiro. João was drawn home in 1820 by a revolution, leaving his son as regent. When Portugal tried to reimpose colonial rule, the prince declared Brazil's independence on Sept. 7, 1822, becoming Pedro I, emperor of Brazil. Harassed by his parliament, Pedro I abdicated in 1831 in favor of his five-year-old son, who became emperor in 1840 (Pedro II). The son was a popular monarch, but discontent built up, and in 1889, following a military revolt, he abdicated. Although a republic was proclaimed, Brazil was ruled by military dictatorships until a revolt permitted a gradual return to stability under civilian presidents."; ObjectID = "HoG-gk-6m9"; */
+"HoG-gk-6m9.text" = "Brazil is the only Latin American nation that derives its language and culture from Portugal. The native inhabitants mostly consisted of the nomadic Tupí-Guaraní Indians. Adm. Pedro Alvares Cabral claimed the territory for Portugal in 1500. The early explorers brought back a wood that produced a red dye, pau-brasil, from which the land received its name. Portugal began colonization in 1532 and made the area a royal colony in 1549.\n\nDuring the Napoleonic Wars, King João VI, fearing the advancing French armies, fled Portugal in 1808 and set up his court in Rio de Janeiro. João was drawn home in 1820 by a revolution, leaving his son as regent. When Portugal tried to reimpose colonial rule, the prince declared Brazil's independence on Sept. 7, 1822, becoming Pedro I, emperor of Brazil. Harassed by his parliament, Pedro I abdicated in 1831 in favor of his five-year-old son, who became emperor in 1840 (Pedro II). The son was a popular monarch, but discontent built up, and in 1889, following a military revolt, he abdicated. Although a republic was proclaimed, Brazil was ruled by military dictatorships until a revolt permitted a gradual return to stability under civilian presidents.";
+
+/* Class = "IBUILabel"; text = "Place 1"; ObjectID = "I70-oI-wja"; */
+"I70-oI-wja.text" = "Place 1";
+
+/* Class = "IBUITextField"; placeholder = "Enter New Password"; ObjectID = "IFM-8z-Ukv"; */
+"IFM-8z-Ukv.placeholder" = "Enter New Password";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "KXg-0x-Vkb"; */
+"KXg-0x-Vkb.normalTitle" = "Back";
+
+/* Class = "IBUIButton"; normalTitle = "No"; ObjectID = "KgN-pn-HhI"; */
+"KgN-pn-HhI.normalTitle" = "No";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "KrK-Dt-kpi"; */
+"KrK-Dt-kpi.normalTitle" = "Back";
+
+/* Class = "IBUILabel"; text = "Place 1"; ObjectID = "KtO-ca-DF2"; */
+"KtO-ca-DF2.text" = "Place 1";
+
+/* Class = "IBUIButton"; normalTitle = "Submit"; ObjectID = "Pi1-WJ-bfc"; */
+"Pi1-WJ-bfc.normalTitle" = "Submit";
+
+/* Class = "IBUITextField"; placeholder = "Enter Name"; ObjectID = "S4X-qm-SQV"; */
+"S4X-qm-SQV.placeholder" = "Enter Name";
+
+/* Class = "IBUITextField"; placeholder = "Confirm Password"; ObjectID = "SCd-H2-Ktl"; */
+"SCd-H2-Ktl.placeholder" = "Confirm Password";
+
+/* Class = "IBUILabel"; text = "Brazil"; ObjectID = "SjD-45-YWw"; */
+"SjD-45-YWw.text" = "Brazil";
+
+/* Class = "IBUITextField"; placeholder = "Enter your Email"; ObjectID = "Td6-lS-yEe"; */
+"Td6-lS-yEe.placeholder" = "Enter your Email";
+
+/* Class = "IBUILabel"; text = "Password :"; ObjectID = "Uc8-Nu-r9H"; */
+"Uc8-Nu-r9H.text" = "Password :";
+
+/* Class = "IBUIButton"; normalTitle = "Change Password"; ObjectID = "UiI-An-wcB"; */
+"UiI-An-wcB.normalTitle" = "Change Password";
+
+/* Class = "IBUIButton"; normalTitle = "Submit Now"; ObjectID = "VDv-85-CLf"; */
+"VDv-85-CLf.normalTitle" = "Submit Now";
+
+/* Class = "IBUILabel"; text = "Confirm Password :"; ObjectID = "Ygu-HY-EYr"; */
+"Ygu-HY-EYr.text" = "Confirm Password :";
+
+/* Class = "IBUITextField"; placeholder = "Enter your Password"; ObjectID = "ZHg-XL-dZt"; */
+"ZHg-XL-dZt.placeholder" = "Enter your Password";
+
+/* Class = "IBUIButton"; normalTitle = "Login"; ObjectID = "ZUq-c0-Xhf"; */
+"ZUq-c0-Xhf.normalTitle" = "Login";
+
+/* Class = "IBUILabel"; text = "Alfredo"; ObjectID = "Zo3-FN-UdI"; */
+"Zo3-FN-UdI.text" = "Alfredo";
+
+/* Class = "IBUILabel"; text = "Search Here :"; ObjectID = "av6-GE-GTi"; */
+"av6-GE-GTi.text" = "Search Here :";
+
+/* Class = "IBUILabel"; text = "Must Visit place. Add it on your to do list"; ObjectID = "b7s-r1-oQF"; */
+"b7s-r1-oQF.text" = "Must Visit place. Add it on your to do list";
+
+/* Class = "IBUILabel"; text = "*"; ObjectID = "cSa-Et-s0y"; */
+"cSa-Et-s0y.text" = "*";
+
+/* Class = "IBUILabel"; text = "CHOOSE YOUR CATEGORY"; ObjectID = "ccp-J1-8pp"; */
+"ccp-J1-8pp.text" = "ESCOLHA A CATEGORIA";
+
+/* Class = "IBUILabel"; text = "Share this"; ObjectID = "czn-IR-DPk"; */
+"czn-IR-DPk.text" = "Share this";
+
+/* Class = "IBUILabel"; text = "*"; ObjectID = "d8R-xJ-feh"; */
+"d8R-xJ-feh.text" = "*";
+
+/* Class = "IBUISegmentedControl"; dMg-jR-E7e.segmentTitles[0] = "LIST"; ObjectID = "dMg-jR-E7e"; */
+"dMg-jR-E7e.segmentTitles[0]" = "LIST";
+
+/* Class = "IBUISegmentedControl"; dMg-jR-E7e.segmentTitles[1] = "MAP"; ObjectID = "dMg-jR-E7e"; */
+"dMg-jR-E7e.segmentTitles[1]" = "MAP";
+
+/* Class = "IBUIButton"; normalTitle = "Sign Up"; ObjectID = "ePf-zQ-7nP"; */
+"ePf-zQ-7nP.normalTitle" = "Sign Up";
+
+/* Class = "IBUILabel"; text = "Page : 1"; ObjectID = "eVh-KX-UIl"; */
+"eVh-KX-UIl.text" = "Page : 1";
+
+/* Class = "IBUILabel"; text = "10.0"; ObjectID = "eiP-m5-Be7"; */
+"eiP-m5-Be7.text" = "10.0";
+
+/* Class = "IBUIButton"; normalTitle = "Sorting Place"; ObjectID = "fTM-8c-axc"; */
+"fTM-8c-axc.normalTitle" = "Sorting Place";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "gBR-SY-Q1z"; */
+"gBR-SY-Q1z.normalTitle" = "Back";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "hoi-Hr-udx"; */
+"hoi-Hr-udx.normalTitle" = "Back";
+
+/* Class = "IBUILabel"; text = "Rating :"; ObjectID = "iP1-oi-dsK"; */
+"iP1-oi-dsK.text" = "Rating :";
+
+/* Class = "IBUILabel"; text = "Page : 1"; ObjectID = "j1b-lb-s1i"; */
+"j1b-lb-s1i.text" = "Page : 1";
+
+/* Class = "IBUILabel"; text = "lblSeperator"; ObjectID = "jni-oX-Yto"; */
+"jni-oX-Yto.text" = "lblSeperator";
+
+/* Class = "IBUILabel"; text = "About Us"; ObjectID = "leJ-Ff-qKc"; */
+"leJ-Ff-qKc.text" = "About Us";
+
+/* Class = "IBUIButton"; normalTitle = "Login"; ObjectID = "m0h-bp-uYZ"; */
+"m0h-bp-uYZ.normalTitle" = "Login";
+
+/* Class = "IBUITextField"; placeholder = "Search"; ObjectID = "mD3-s1-jy4"; */
+"mD3-s1-jy4.placeholder" = "Search";
+
+/* Class = "IBUILabel"; text = "Name :"; ObjectID = "n1n-xu-IAb"; */
+"n1n-xu-IAb.text" = "Name :";
+
+/* Class = "IBUILabel"; text = "10.0"; ObjectID = "nez-Ea-bCZ"; */
+"nez-Ea-bCZ.text" = "10.0";
+
+/* Class = "IBUILabel"; text = "User Email :"; ObjectID = "r4K-6b-ZIN"; */
+"r4K-6b-ZIN.text" = "User Email :";
+
+/* Class = "IBUIButton"; normalTitle = "Forgot Password ?"; ObjectID = "rHG-Yg-BWB"; */
+"rHG-Yg-BWB.normalTitle" = "Forgot Password ?";
+
+/* Class = "IBUITextField"; placeholder = "Enter your Password"; ObjectID = "tna-Ma-7gx"; */
+"tna-Ma-7gx.placeholder" = "Enter your Password";
+
+/* Class = "IBUILabel"; text = "NEAR ME"; ObjectID = "uPp-UQ-dUF"; */
+"uPp-UQ-dUF.text" = "POR PERTO";
+
+/* Class = "IBUILabel"; text = "* Required Field"; ObjectID = "v07-03-B7v"; */
+"v07-03-B7v.text" = "* Required Field";
+
+/* Class = "IBUILabel"; text = "Login with :"; ObjectID = "wbN-P3-PCR"; */
+"wbN-P3-PCR.text" = "Login with :";
+
+/* Class = "IBUITextField"; placeholder = "Enter Comment Title"; ObjectID = "wew-qT-fdj"; */
+"wew-qT-fdj.placeholder" = "Enter Comment Title";
+
+/* Class = "IBUILabel"; text = "Comment :"; ObjectID = "xb6-Qu-uJT"; */
+"xb6-Qu-uJT.text" = "Comment :";
+
+/* Class = "IBUITextField"; placeholder = "Please Confirm Password"; ObjectID = "yHY-lV-CUp"; */
+"yHY-lV-CUp.placeholder" = "Please Confirm Password";
+
+/* Class = "IBUIButton"; normalTitle = "Submit"; ObjectID = "yMQ-Fw-4RK"; */
+"yMQ-Fw-4RK.normalTitle" = "Submit";
+
+/* Class = "IBUILabel"; text = "Comment"; ObjectID = "zsd-ec-H5S"; */
+"zsd-ec-H5S.text" = "Comment";

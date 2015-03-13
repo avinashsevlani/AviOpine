@@ -63,7 +63,7 @@ NSData *dataImage;
         }
         else
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your device not Supported Camera, Please choose photo from Gallery" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your device not Supported Camera, Please choose photo from Gallery" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
@@ -87,7 +87,7 @@ NSData *dataImage;
 - (IBAction)btnSubmitTapped:(id)sender
 {
     if (![txtNewPassword.text isEqualToString:[txtConfirmPassword text]]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password & Confirm Password must be Same." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Password & Confirm Password must be Same." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         [txtConfirmPassword setText:@""];
         [txtConfirmPassword resignFirstResponder];
@@ -108,7 +108,7 @@ NSData *dataImage;
 - (IBAction)ConfirmPasswordTapped:(id)sender
 {
     if (![txtNewPassword.text isEqualToString:[txtConfirmPassword text]]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Password & Confirm Password must be Same." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Password & Confirm Password must be Same." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         [txtConfirmPassword setText:@""];
         [txtConfirmPassword resignFirstResponder];
@@ -118,7 +118,7 @@ NSData *dataImage;
 
 - (IBAction)btnChangePhotoTapped:(id)sender
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose Photo" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Gallery", @"Camera", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose Photo" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Gallery", @"Camera", nil];
     [actionSheet showInView:self.view];
 }
 
@@ -177,12 +177,12 @@ NSData *dataImage;
                          NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
                          NSString *data = [dictTemp valueForKey:@"Message"];
                          if ([data isEqual:@"Error"]) {
-                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Username & Password is Invalid. There are no such user with it." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Username & Password is Invalid. There are no such user with it." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                              [alert show];
                              [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                              return;
                          }
-                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[dictTemp valueForKey:@"MessageInfo"]delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[dictTemp valueForKey:@"MessageInfo"]delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                          [alert show];
                          objAppDelegate.marrUserData = [[NSMutableArray alloc] init];
                          UserModel *objUser = [[UserModel alloc] init];

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>01EA56D0-9390-48B8-B733-8933F20987BA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Opine</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B4B389390C5531A5D5D9B20A5AE03C816B4CA869</key>
+		<string>https://github.com/avinashsevlani/AviOpine.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Opine/Opine.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B4B389390C5531A5D5D9B20A5AE03C816B4CA869</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/avinashsevlani/AviOpine.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B4B389390C5531A5D5D9B20A5AE03C816B4CA869</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B4B389390C5531A5D5D9B20A5AE03C816B4CA869</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AviOpine</string>
+		</dict>
+	</array>
+</dict>
+</plist>

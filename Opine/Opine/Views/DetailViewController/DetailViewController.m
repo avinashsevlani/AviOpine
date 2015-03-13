@@ -162,7 +162,7 @@ NSMutableArray *marrRatingStore;
             UIButton *btn_rate = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             btn_rate.frame = CGRectMake(100, 05, 110, 25);
             [btn_rate setBackgroundImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
-            [btn_rate setTitle:@"Reply" forState:UIControlStateNormal];
+            [btn_rate setTitle:@"Responder" forState:UIControlStateNormal];
             [btn_rate.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:10.0]];
             [btn_rate addTarget:self action:@selector(replay_action) forControlEvents:UIControlEventTouchUpInside];
             [btn_rate setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -195,7 +195,7 @@ NSMutableArray *marrRatingStore;
     if(isRatingStart) {
         RateLabelTableViewCell *cellRateLabel = (RateLabelTableViewCell *)[tblRateLabel viewWithTag:rateView.tag];
         cellRateLabel.lblRateLabelRating.text = [NSString stringWithFormat:@"%@", rate];
-        NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"rate%d:%@", rateView.tag, rate], @"rate", nil];
+        NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"Nota%d:%@", rateView.tag, rate], @"rate", nil];
         [marrRatingStore addObject:dict];
     }
 }
@@ -247,7 +247,7 @@ NSMutableArray *marrRatingStore;
 
 - (IBAction)btnClaimTapped:(id)sender
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Check Data" message:@"Is this property belongs to you?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Confirme os dados" message:@"Essa propriedade é sua?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     [alertView show];
 }
 #pragma mark - alertview delegate
@@ -385,7 +385,7 @@ NSMutableArray *marrRatingStore;
     _pageCount++;
     [self.tblComment setTag:_pageCount];
     [self.tblComment reloadData];
-    [lblPageNumber setText:[NSString stringWithFormat:@"Page : %lu", (unsigned long)_pageCount]];
+    [lblPageNumber setText:[NSString stringWithFormat:@"Página : %lu", (unsigned long)_pageCount]];
     pagingComment.currentPage = _pageCount-1;
 }
 
@@ -397,7 +397,7 @@ NSMutableArray *marrRatingStore;
     _pageCount--;
     [self.tblComment setTag:_pageCount];
     [self.tblComment reloadData];
-    [lblPageNumber setText:[NSString stringWithFormat:@"Page : %lu", (unsigned long)_pageCount]];
+    [lblPageNumber setText:[NSString stringWithFormat:@"Página : %lu", (unsigned long)_pageCount]];
     pagingComment.currentPage = _pageCount-1;
 }
 
@@ -519,7 +519,7 @@ NSMutableArray *marrRatingStore;
 
 - (void)loadStarControlInHeader
 {
-    lblRatingHeader.text = [NSString stringWithFormat:@"Rating : %0.1f", [objPlaceDetail.placeRating doubleValue]];
+    lblRatingHeader.text = [NSString stringWithFormat:@"Nota : %0.1f", [objPlaceDetail.placeRating doubleValue]];
 }
 
 - (void)loadEditableRateControl: (RateView *) rateView tagForControl:(int)tag rate:(float)rate
@@ -604,10 +604,10 @@ NSMutableArray *marrRatingStore;
               NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
               if ([[dictTemp valueForKey:@"Message"] isEqualToString:@"Success"]) {
                   [self getPlaceDetailByPlaceID:placeID];
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thank You" message:@"Your Rate & Comment is Submitted." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Obrigado" message:@"Voto e Comentário Enviado." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
               } else {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your Rate & Comment not Submitted, Please give it again." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Seu voto não foi enviado. Tente novamente." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
               }
               [MBProgressHUD hideHUDForView:self.view animated:YES];

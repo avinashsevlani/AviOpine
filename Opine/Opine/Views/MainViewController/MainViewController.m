@@ -423,7 +423,7 @@ bool isPlaceByCategoryDone = NO;
 {
     [self.slidingViewController resetTopView];
     if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"Sobre Nós"]) {
-        
+        aboutUSLabel.textAlignment = NSTextAlignmentNatural;
         if (!aboutUSLabel.text.length)
         {
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -436,6 +436,7 @@ bool isPlaceByCategoryDone = NO;
                      NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
                      NSString *contentStr = [dictTemp valueForKey:@"content"];
                      aboutUSLabel.text = contentStr;
+                     [aboutUSLabel sizeToFit];
                       [MBProgressHUD hideHUDForView:self.view animated:YES];
                  }
                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {

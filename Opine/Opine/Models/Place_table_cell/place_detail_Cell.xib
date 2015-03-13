@@ -57,7 +57,7 @@
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cyQ-vS-kHM">
-                        <rect key="frame" x="0.0" y="124" width="63" height="18"/>
+                        <rect key="frame" x="0.0" y="124" width="100" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <state key="normal" title="Responder" backgroundImage="imgButtonBack.png">

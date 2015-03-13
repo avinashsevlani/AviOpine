@@ -858,6 +858,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
     }
     [self storeRateAndComment];
     [_btn_rate_Commant setImage:[UIImage imageNamed:@"imgRateComment.png"] forState:UIControlStateNormal];
+    //imgButtonBack.png
     _btn_rate_Commant.hidden = NO;
     //    btnClaim.hidden = NO;
 

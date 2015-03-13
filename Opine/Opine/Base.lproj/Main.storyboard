@@ -387,7 +387,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sobre Nós" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leJ-Ff-qKc">
                                         <rect key="frame" x="257" y="10" width="86" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1098,8 +1098,8 @@
                                     <constraint firstAttribute="width" constant="119" id="ZYJ-g7-dWx"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adj-kx-NtK">
-                                <rect key="frame" x="16" y="39" width="44" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adj-kx-NtK">
+                                <rect key="frame" x="16" y="39" width="53" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="8Mr-LF-sDf"/>
                                     <constraint firstAttribute="width" constant="44" id="NYn-ek-XaE"/>
@@ -1111,8 +1111,8 @@
                                     <action selector="btnBackTapped:" destination="8dx-lP-kmN" eventType="touchUpInside" id="mRu-OC-emY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pJ-ei-ecb">
-                                <rect key="frame" x="524" y="39" width="60" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pJ-ei-ecb">
+                                <rect key="frame" x="473" y="39" width="111" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Di2-U8-ghP"/>
                                     <constraint firstAttribute="width" constant="60" id="xY0-4p-avO"/>

@@ -274,7 +274,6 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
         //[_btn_rate_Commant setBackgroundImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
         [_btn_rate_Commant setTitle:@"Vote" forState:UIControlStateNormal];
         _btn_rate_Commant.frame = CGRectMake(_btn_rate_Commant.frame.origin.x+30, _btn_rate_Commant.frame.origin.y, _btn_rate_Commant.frame.size.width, _btn_rate_Commant.frame.size.height);
-        [_btn_rate_Commant setTitle:@"" forState:UIControlStateNormal];
         
     } else {
         //[_btn_rate_Commant setImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
@@ -897,11 +896,31 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
               NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
               if ([[dictTemp valueForKey:@"Message"] isEqualToString:@"Success"]) {
                   [self getPlaceDetails:placeID];
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Obrigado" message:@"Voto e Comentário Enviado." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                  [alert show];
-              } else {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Seu voto não foi enviado. Tente novamente." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                  [alert show];
+                  
+                  if ([dictTemp valueForKey:@"MessageInfo"])
+                  {
+                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Obrigado" message:[dictTemp valueForKey:@"MessageInfo"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                      [alert show];
+                  }
+                  else
+                  {
+                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Obrigado" message:@"Voto e Comentário Enviado." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                      [alert show];
+
+                  }
+
+                } else {
+                  if ([dictTemp valueForKey:@"MessageInfo"])
+                  {
+                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:[dictTemp valueForKey:@"MessageInfo"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                      [alert show];
+                  }
+                  else
+                  {
+                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Seu voto não foi enviado. Tente novamente." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                      [alert show];
+                  }
+                 
               }
               [MBProgressHUD hideHUDForView:self.view animated:YES];
           }

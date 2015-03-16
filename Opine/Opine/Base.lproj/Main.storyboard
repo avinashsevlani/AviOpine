@@ -1337,7 +1337,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R56-r1-TC8">
-                                <rect key="frame" x="126" y="70" width="46" height="41"/>
+                                <rect key="frame" x="176" y="70" width="46" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="Mil-kA-r4T"/>
                                     <constraint firstAttribute="height" constant="41" id="RAL-2O-odc"/>
@@ -1350,10 +1350,10 @@
                                     <action selector="btnFBLoginTapped:" destination="U5G-Zh-RGx" eventType="touchUpInside" id="8h7-x2-sAl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar com :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hg4-8c-1lr">
-                                <rect key="frame" x="16" y="80" width="108" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cadastrar com :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hg4-8c-1lr">
+                                <rect key="frame" x="16" y="80" width="131" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="0w7-10-egy"/>
+                                    <constraint firstAttribute="width" constant="130" id="0w7-10-egy"/>
                                     <constraint firstAttribute="height" constant="21" id="d2B-9M-lsR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1477,10 +1477,10 @@
                                             <outlet property="delegate" destination="U5G-Zh-RGx" id="Hhm-pL-RXi"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Campo Obrigatório" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v07-03-B7v">
-                                        <rect key="frame" x="455" y="16" width="130" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="*Campo Obrigatório" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v07-03-B7v">
+                                        <rect key="frame" x="397" y="16" width="188" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="9W6-Ij-7Ze"/>
+                                            <constraint firstAttribute="width" constant="190" id="9W6-Ij-7Ze"/>
                                             <constraint firstAttribute="height" constant="21" id="Cvj-hD-Atn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1569,9 +1569,9 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePf-zQ-7nP">
-                                        <rect key="frame" x="515" y="146" width="64" height="24"/>
+                                        <rect key="frame" x="495" y="146" width="84" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="3jw-0n-hCw"/>
+                                            <constraint firstAttribute="width" constant="84" id="3jw-0n-hCw"/>
                                             <constraint firstAttribute="height" constant="24" id="CDq-G2-uML"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
@@ -1626,8 +1626,17 @@
                                             <constraint firstAttribute="height" constant="54" id="g7a-o9-u3V"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X98-GZ-0gU">
-                                        <rect key="frame" x="116" y="6" width="46" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar com :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbN-P3-PCR">
+                                        <rect key="frame" x="19" y="16" width="130" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="b1R-9E-0vu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X98-GZ-0gU">
+                                        <rect key="frame" x="180" y="8" width="46" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="wtg-V7-MVB"/>
                                             <constraint firstAttribute="width" constant="46" id="yqB-5O-fhG"/>
@@ -1640,12 +1649,6 @@
                                             <action selector="btnFBLoginTapped:" destination="U5G-Zh-RGx" eventType="touchUpInside" id="EyR-qr-RwL"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Login com :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbN-P3-PCR">
-                                        <rect key="frame" x="19" y="16" width="96" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23529413339999999" green="0.75686281919999998" blue="0.78431379800000001" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
@@ -1667,7 +1670,7 @@
                                     <constraint firstItem="tna-Ma-7gx" firstAttribute="leading" secondItem="Zvn-Xf-Fyc" secondAttribute="leading" constant="19" id="a1z-Nd-gf9"/>
                                     <constraint firstItem="wbN-P3-PCR" firstAttribute="top" secondItem="Zvn-Xf-Fyc" secondAttribute="top" constant="16" id="hTa-GJ-5rE"/>
                                     <constraint firstItem="DMN-cv-1O5" firstAttribute="leading" secondItem="Zvn-Xf-Fyc" secondAttribute="leading" constant="19" id="kiQ-DZ-Nif"/>
-                                    <constraint firstItem="X98-GZ-0gU" firstAttribute="leading" secondItem="Zvn-Xf-Fyc" secondAttribute="leading" constant="116" id="sxL-ne-M9C"/>
+                                    <constraint firstItem="X98-GZ-0gU" firstAttribute="leading" secondItem="Zvn-Xf-Fyc" secondAttribute="leading" constant="180" id="sxL-ne-M9C"/>
                                     <constraint firstAttribute="trailing" secondItem="ePf-zQ-7nP" secondAttribute="trailing" constant="21" id="xK8-cc-eJb"/>
                                     <constraint firstItem="X98-GZ-0gU" firstAttribute="top" secondItem="Zvn-Xf-Fyc" secondAttribute="top" constant="6" id="xjg-kh-uE2"/>
                                 </constraints>
@@ -1684,7 +1687,7 @@
                             <constraint firstItem="Zvn-Xf-Fyc" firstAttribute="top" secondItem="Pjs-20-kRj" secondAttribute="bottom" constant="41" id="BtM-Jk-TfG"/>
                             <constraint firstItem="4Nw-aH-VPS" firstAttribute="leading" secondItem="PQ9-Tm-jzc" secondAttribute="leadingMargin" constant="-16" id="DUV-k3-VHh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Nw-aH-VPS" secondAttribute="trailing" constant="-16" id="FuV-Bu-SxR"/>
-                            <constraint firstItem="R56-r1-TC8" firstAttribute="leading" secondItem="PQ9-Tm-jzc" secondAttribute="leadingMargin" constant="110" id="MiI-KI-bhA"/>
+                            <constraint firstItem="R56-r1-TC8" firstAttribute="leading" secondItem="PQ9-Tm-jzc" secondAttribute="leadingMargin" constant="160" id="MiI-KI-bhA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zvn-Xf-Fyc" secondAttribute="trailing" constant="-16" id="O12-Re-dUG"/>
                             <constraint firstItem="0Z7-ZU-12r" firstAttribute="leading" secondItem="PQ9-Tm-jzc" secondAttribute="leadingMargin" constant="-16" id="S72-rl-aAc"/>
                             <constraint firstItem="R56-r1-TC8" firstAttribute="top" secondItem="Pjs-20-kRj" secondAttribute="bottom" constant="50" id="b2Z-4l-1Sv"/>

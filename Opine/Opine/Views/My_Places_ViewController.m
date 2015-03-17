@@ -100,7 +100,7 @@
     }
     else
     {
-        [[[UIAlertView alloc]initWithTitle:@"Warning!" message:@"No Places Available!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+        [[[UIAlertView alloc]initWithTitle:@"AtenÁ„o!" message:@"Nenhum lugar disponÌvel" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
     }
     
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -223,7 +223,7 @@
     }
     else
     {
-        [[[UIAlertView alloc]initWithTitle:@"Warning!" message:@"No Places Available!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+        [[[UIAlertView alloc]initWithTitle:@"AtenÁ„o!" message:@"Nenhum lugar disponÌvel" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
     }
      [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     [tbl_places reloadData];

@@ -201,7 +201,7 @@
 {
     if (txt_place_name.text.length == 0 || txt_address.text.length == 0 || txt_zip.text.length == 0 || txt_city.text.length == 0 || btn_state.titleLabel.text.length == 0)
     {
-        [[[UIAlertView alloc]initWithTitle:@"Warning!" message:@"Please fill all fields!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+        [[[UIAlertView alloc]initWithTitle:@"AtenÁ„o!" message:@"Please fill all fields!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
     }
     else
     {
@@ -455,7 +455,7 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Warning!" message:@"This Device Does not have Camera" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"AtenÁ„o!" message:@"Esse aparelho n„o tem c‚mera." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
     }
 }

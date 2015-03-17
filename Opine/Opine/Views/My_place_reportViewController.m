@@ -162,7 +162,7 @@
     }
     else
     {
-        UIAlertView *alertr = [[UIAlertView alloc]initWithTitle:@"Warning!" message:[dic_response valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alertr = [[UIAlertView alloc]initWithTitle:@"AtenÁ„o!" message:[dic_response valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertr show];
     }
     
@@ -464,7 +464,7 @@
     NSDictionary * dic_res  = [Utility_Class Request_service_get_response_in_Post:dic :str_url];
     if ([[dic_res valueForKeyPath:@"Success"] isEqualToString:@"0"])
     {
-        [[[UIAlertView alloc]initWithTitle:@"Warning!" message:[dic_res valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
+        [[[UIAlertView alloc]initWithTitle:@"AtenÁ„o!" message:[dic_res valueForKeyPath:@"MessageInfo"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
     }
     else
     {

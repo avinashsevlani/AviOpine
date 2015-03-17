@@ -82,7 +82,7 @@
     }
     else{
         UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
-                                  @"Purchases are disabled in your device" message:nil delegate:
+                                  @"As compras est„o desabilitadas no seu aparelho." message:nil delegate:
                                   self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [alertView show];
     }
@@ -154,7 +154,7 @@
             //                                @"%@",validProduct.price]];
             
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
-                                      [NSString stringWithFormat:@"Do you want to purchase '%@' by '%@' for price %@",validProduct.localizedTitle,validProduct.localizedDescription,validProduct.price] message:nil delegate:
+                                      [NSString stringWithFormat:@"VocÍ quer comprar '%@' por '%@' pelo preÁo %@",validProduct.localizedTitle,validProduct.localizedDescription,validProduct.price] message:nil delegate:
                                       self cancelButtonTitle:@"Cancelar" otherButtonTitles: @"Buy Now",nil];
             alertView.tag = 2222;
             [alertView show];
@@ -427,7 +427,7 @@
     {
         if (txt_unique_no.text.length == 0 || txt_mobi_no.text.length == 0 || txt_cnpj_no.text.length == 0)
         {
-            [[[UIAlertView alloc]initWithTitle:@"Failed" message:@"Please fill all above fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+            [[[UIAlertView alloc]initWithTitle:@"Failed" message:@" Favor preencher todos os campos." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
         }
         else
         {
@@ -474,7 +474,7 @@
     {
         if (txt_name.text.length == 0 || txt_password.text.length == 0 || txt_conf_password.text.length == 0 || uniqueID.length == 0 || txt_mobi_no.text.length == 0 || txt_cnpj_no.text.length == 0 || txt_user_mail.text.length == 0)
         {
-            [[[UIAlertView alloc]initWithTitle:@"Failed" message:@"Please fill all above fields" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+            [[[UIAlertView alloc]initWithTitle:@"Failed" message:@" Favor preencher todos os campos." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
         }
         else
         {

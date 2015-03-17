@@ -48,7 +48,7 @@ bool isPlaceByCategoryDone = NO;
 {
     [super viewDidLoad];
     if (![self isInternetAvailable]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Internet Unavailable" message:@"Please check your Internet Connection." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Internet Unavailable" message:@"Favor checar sua conex„o" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         return;
     }

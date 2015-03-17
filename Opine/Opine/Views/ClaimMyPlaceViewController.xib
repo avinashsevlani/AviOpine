@@ -102,19 +102,19 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" id="Nf2-ib-1Y9">
-                            <rect key="frame" x="125.00000035183169" y="3" width="281" height="28"/>
+                            <rect key="frame" x="125.00000036894586" y="3" width="281" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" id="Ibl-ku-yqU">
-                            <rect key="frame" x="125.0000003518317" y="39" width="281" height="45"/>
+                            <rect key="frame" x="125.00000036894588" y="39" width="281" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nota :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vPK-QT-yX0">
-                            <rect key="frame" x="125.0000003518317" y="83" width="281" height="17"/>
+                            <rect key="frame" x="125.00000036894588" y="83" width="281" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -301,7 +301,7 @@
                     <color key="backgroundColor" red="0.180392161" green="0.74117648599999997" blue="0.76470595600000002" alpha="1" colorSpace="deviceRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="FEd-uI-zmG">
-                    <rect key="frame" x="8" y="72" width="397.99999979313685" height="656"/>
+                    <rect key="frame" x="8" y="72" width="397.9999995862737" height="656"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5z0-c3-e6i">

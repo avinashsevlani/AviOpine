@@ -273,12 +273,12 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
     if (objAppDelegate.isLogin) {
         //[_btn_rate_Commant setBackgroundImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
         [_btn_rate_Commant setTitle:@"Vote" forState:UIControlStateNormal];
-        _btn_rate_Commant.frame = CGRectMake(_btn_rate_Commant.frame.origin.x+30, _btn_rate_Commant.frame.origin.y, _btn_rate_Commant.frame.size.width, _btn_rate_Commant.frame.size.height);
+//        _btn_rate_Commant.frame = CGRectMake(_btn_rate_Commant.frame.origin.x+30, _btn_rate_Commant.frame.origin.y, _btn_rate_Commant.frame.size.width, _btn_rate_Commant.frame.size.height);
         
     } else {
         //[_btn_rate_Commant setImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
         [_btn_rate_Commant setTitle:@"Vote & Comente" forState:UIControlStateNormal];
-        _btn_rate_Commant.frame = CGRectMake(_btn_rate_Commant.frame.origin.x, _btn_rate_Commant.frame.origin.y, _btn_rate_Commant.frame.size.width, _btn_rate_Commant.frame.size.height);
+//        _btn_rate_Commant.frame = CGRectMake(_btn_rate_Commant.frame.origin.x, _btn_rate_Commant.frame.origin.y, _btn_rate_Commant.frame.size.width, _btn_rate_Commant.frame.size.height);
     }
     if (_numPages > 1) {
         _page_controller.hidden = NO;

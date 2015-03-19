@@ -51,7 +51,7 @@
 {
     if (buttonIndex == 1) {
         if (![OpineModel validateEmail:[[alertView textFieldAtIndex:0] text]]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Seu email n„o È v·lido, favor checar." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Seu email não é válido, favor checar." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
             return;
         }
@@ -94,12 +94,12 @@
 - (IBAction)btnSubmitTapped:(id)sender
 {
     if ([txtUserNameSignUp.text isEqual:@""] || [txtPasswordSignUp.text isEqual:@""] || [txtConfirmPassword.text isEqual:@""] || [txtFirstName.text isEqual:@""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Please fill all Data which are Required for Cadastre-se" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Favor completar todos os dados para completar o cadastro." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         return;
     }
     if (![OpineModel validateEmail:txtUserNameSignUp.text]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Seu email n„o È v·lido, favor checar." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Seu email não é válido, favor checar." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         [txtUserNameSignUp setText:@""];
         return;
@@ -136,12 +136,12 @@
 - (IBAction)btnLoginTapped:(id)sender
 {
     if ([txtUserName.text isEqual:@""] || [txtPassword.text isEqual:@""]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Please Enter Username and Password both." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Por favor, introduza-mail e senha" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         return;
     }
     if (![OpineModel validateEmail:txtUserName.text]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Seu email n„o È v·lido, favor checar." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Seu email não é válido, favor checar." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         [txtUserName setText:@""];
         return;
@@ -152,7 +152,7 @@
 - (IBAction) checkConfirmPassword:(id)sender
 {
     if (![txtPasswordSignUp.text isEqualToString:[txtConfirmPassword text]]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Senha e ConfirmaÁ„o de Sneha devem ser iguais." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Senha e Confirmação de Sneha devem ser iguais." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         [txtConfirmPassword setText:@""];
     }
@@ -250,7 +250,7 @@
               NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
               NSString *data = [dictTemp valueForKey:@"Message"];
               if ([data isEqual:@"Erro"]) {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Nome de usu·rio e/ou senha inv·lida. N„o encontramos este usu·rio." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"ome de usuário e/ou senha inválida. Não encontramos este usuário." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
                   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                   return;
@@ -340,7 +340,7 @@
                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Now, check your email address for Password." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];;
               } else {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Por favor, tente novamente com o endereÁo cadastrado." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Por favor, tente novamente com o endereço cadastrado." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
               }
               [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

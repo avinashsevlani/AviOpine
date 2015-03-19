@@ -1008,7 +1008,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
     iisRepeatNo = NO;
     iisRepeatYes = NO;
     [_lbl_repeat setText:@"0%"];
-    _btn_rate_Commant.hidden = YES;
+    _btn_rate_Commant.hidden = NO;
     //    btnClaim.hidden = YES;
     [self showRateAndcommantView];
 //    [self ratingUserInterfaceEnable:YES];

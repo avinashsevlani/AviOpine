@@ -82,7 +82,7 @@
     }
     else{
         UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
-                                  @"As compras est„o desabilitadas no seu aparelho." message:nil delegate:
+                                  @"As compras estão desabilitadas no seu aparelho." message:nil delegate:
                                   self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [alertView show];
     }
@@ -154,7 +154,7 @@
             //                                @"%@",validProduct.price]];
             
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
-                                      [NSString stringWithFormat:@"VocÍ quer comprar '%@' por '%@' pelo preÁo %@",validProduct.localizedTitle,validProduct.localizedDescription,validProduct.price] message:nil delegate:
+                                      [NSString stringWithFormat:@"Você quer comprar '%@' por '%@' pelo preço %@",validProduct.localizedTitle,validProduct.localizedDescription,validProduct.price] message:nil delegate:
                                       self cancelButtonTitle:@"Cancelar" otherButtonTitles: @"Buy Now",nil];
             alertView.tag = 2222;
             [alertView show];

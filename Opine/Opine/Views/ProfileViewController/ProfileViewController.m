@@ -63,7 +63,7 @@ NSData *dataImage;
         }
         else
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"AtenÁ„o" message:@"Seu aparelho n„o suporta c‚mera, favor escolher foto da galeria." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Atenção!" message:@"Seu aparelho não suporta câmera, favor escolher foto da galeria." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
@@ -87,7 +87,7 @@ NSData *dataImage;
 - (IBAction)btnSubmitTapped:(id)sender
 {
     if (![txtNewPassword.text isEqualToString:[txtConfirmPassword text]]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Senha e ConfirmaÁ„o de Sneha devem ser iguais." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Senha e Confirmação de Sneha devem ser iguais." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         [txtConfirmPassword setText:@""];
         [txtConfirmPassword resignFirstResponder];
@@ -108,7 +108,7 @@ NSData *dataImage;
 - (IBAction)ConfirmPasswordTapped:(id)sender
 {
     if (![txtNewPassword.text isEqualToString:[txtConfirmPassword text]]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Senha e ConfirmaÁ„o de Sneha devem ser iguais." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Senha e Confirmação de Sneha devem ser iguais." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         [txtConfirmPassword setText:@""];
         [txtConfirmPassword resignFirstResponder];
@@ -177,7 +177,7 @@ NSData *dataImage;
                          NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
                          NSString *data = [dictTemp valueForKey:@"Message"];
                          if ([data isEqual:@"Error"]) {
-                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Nome de usu·rio e/ou senha inv·lida. N„o encontramos este usu·rio." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"ome de usuário e/ou senha inválida. Não encontramos este usuário." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                              [alert show];
                              [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                              return;

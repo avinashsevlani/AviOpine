@@ -272,7 +272,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 
     if (objAppDelegate.isLogin) {
         //[_btn_rate_Commant setBackgroundImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
-        [_btn_rate_Commant setTitle:@"Vote" forState:UIControlStateNormal];
+        [_btn_rate_Commant setTitle:@"Vote & Comente" forState:UIControlStateNormal];
 //        _btn_rate_Commant.frame = CGRectMake(_btn_rate_Commant.frame.origin.x+30, _btn_rate_Commant.frame.origin.y, _btn_rate_Commant.frame.size.width, _btn_rate_Commant.frame.size.height);
         
     } else {
@@ -585,7 +585,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 {
     RatingListTableViewCell *cellRateLabel = (RatingListTableViewCell *)[_tbl_ratings viewWithTag:rateView.tag];
     cellRateLabel.lbl_percentage.text = [NSString stringWithFormat:@"%@", rate];
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"Vote%d:%@", rateView.tag, rate], @"rate", nil];
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"rate%d:%@", rateView.tag, rate], @"rate", nil];
     [marrRatingStore addObject:dict];
 }
 
@@ -990,7 +990,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
 {
     if (objAppDelegate.isLogin) {
       //  [_btn_rate_Commant setImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
-         [_btn_rate_Commant setTitle:@"Vote" forState:UIControlStateNormal];
+         [_btn_rate_Commant setTitle:@"Vote & Comente" forState:UIControlStateNormal];
         _btn_rate_Commant.hidden = YES;
         //        btnClaim.hidden = YES;
         [self showRateAndcommantView];
@@ -1003,7 +1003,7 @@ bool isShareIts = NO,iisRepeatNo = NO,iisRepeatYes = NO;
         _btn_rate_Commant.hidden = NO;
     }
     //[_btn_rate_Commant setImage:[UIImage imageNamed:@"imgButtonBack.png"] forState:UIControlStateNormal];
-    [_btn_rate_Commant setTitle:@"Vote" forState:UIControlStateNormal];
+    [_btn_rate_Commant setTitle:@"Vote & Comente" forState:UIControlStateNormal];
     isShareIts = NO;
     iisRepeatNo = NO;
     iisRepeatYes = NO;

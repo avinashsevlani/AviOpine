@@ -130,15 +130,15 @@
     if (objAppDelegate.isLogin)
     {
         if (objAppDelegate.ispaid_user) {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre Nós", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre", nil];
         } else {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre Nós", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre", nil];
         }
         
     }
     else
     {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre Nós", nil];
+        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre", nil];
     }
 }
 

@@ -132,15 +132,15 @@ bool isPlaceByCategoryDone = NO;
     if (objAppDelegate.isLogin)
     {
         if (objAppDelegate.ispaid_user) {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre Nós", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre", nil];
         } else {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre Nós", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre", nil];
         }
         
     }
     else
     {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre Nós", nil];
+        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre", nil];
     }
     [(SettingViewController *)self.slidingViewController.underLeftViewController setMarrSetting:marrSettingItem];
 }
@@ -303,15 +303,15 @@ bool isPlaceByCategoryDone = NO;
     if (objAppDelegate.isLogin)
     {
         if (objAppDelegate.ispaid_user) {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre Nós", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre", nil];
         } else {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre Nós", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre", nil];
         }
         
     }
     else
     {
-        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre Nós", nil];
+        marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre", nil];
     }
     [(SettingViewController *)self.slidingViewController.underLeftViewController setMarrSetting:marrSettingItem];
     [self.slidingViewController anchorTopViewTo:ECRight];
@@ -331,15 +331,15 @@ bool isPlaceByCategoryDone = NO;
     if (objAppDelegate.isLogin)
     {
         if (objAppDelegate.ispaid_user) {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre Nós", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre", nil];
         } else {
-            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre Nós", nil];
+            marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre", nil];
         }
 
     }
     else
     {
-         marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre Nós", nil];
+         marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre", nil];
     }
 }
 
@@ -399,15 +399,15 @@ bool isPlaceByCategoryDone = NO;
             if (objAppDelegate.isLogin)
             {
                 if (objAppDelegate.ispaid_user) {
-                    marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre Nós", nil];
+                    marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Meus Lugares", @"Sobre", nil];
                 } else {
-                    marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre Nós", nil];
+                    marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Meu Perfil",@"Sobre", nil];
                 }
                 
             }
             else
             {
-                marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre Nós", nil];
+                marrSettingItem = [[NSMutableArray alloc] initWithObjects:@"Sobre", nil];
             }
 
             [(SettingViewController *)self.slidingViewController.underLeftViewController setMarrSetting:marrSettingItem];
@@ -422,7 +422,7 @@ bool isPlaceByCategoryDone = NO;
 - (void)openViewBySetting:(NSInteger)settingID
 {
     [self.slidingViewController resetTopView];
-    if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"Sobre Nós"]) {
+    if ([[marrSettingItem objectAtIndex:settingID] isEqualToString:@"Sobre"]) {
         aboutUSLabel.textAlignment = NSTextAlignmentNatural;
         if (!aboutUSLabel.text.length)
         {

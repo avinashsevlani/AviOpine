@@ -249,7 +249,7 @@
               NSLog(@"checkNormalLogin responseObject = %@", [NSString stringWithUTF8String:[responseObject bytes]]);
               NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
               NSString *data = [dictTemp valueForKey:@"Message"];
-              if ([data isEqual:@"Erro"]) {
+              if ([data isEqual:@"Error"]) {
                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"ome de usuário e/ou senha inválida. Não encontramos este usuário." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];
                   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -337,8 +337,21 @@
               NSLog(@"sendEmailForFogotPassword responseObject = %@", [NSString stringWithUTF8String:[responseObject bytes]]);
               NSDictionary *dictTemp = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
               if ([[dictTemp valueForKey:@"Message"] isEqualToString:@"Success"]) {
-                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Now, check your email address for Password." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                  [alert show];;
+                  
+                  if ([dictTemp valueForKey:@"MessageInfo"])
+                  {
+                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Obrigado" message:[dictTemp valueForKey:@"MessageInfo"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                      [alert show];
+                  }
+                  else
+                  {
+                      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Obrigado" message:@"Verifique se o seu e-mail de senha." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                      [alert show];;
+                      
+                  }
+
+                  
+                 
               } else {
                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Por favor, tente novamente com o endereço cadastrado." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   [alert show];

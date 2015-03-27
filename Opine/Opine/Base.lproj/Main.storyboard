@@ -2026,10 +2026,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgPlace3Photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="chE-E3-RFX">
-                                                    <rect key="frame" x="8" y="14" width="60" height="66"/>
+                                                    <rect key="frame" x="8" y="14" width="66" height="66"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="0kK-1x-qwQ"/>
-                                                        <constraint firstAttribute="width" constant="60" id="diF-un-jdt"/>
+                                                        <constraint firstAttribute="width" constant="66" id="diF-un-jdt"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -2038,7 +2038,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiP-m5-Be7">
-                                                    <rect key="frame" x="134" y="67" width="42" height="21"/>
+                                                    <rect key="frame" x="140" y="67" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="J5l-qk-AvI"/>
                                                         <constraint firstAttribute="height" constant="21" id="Zjm-u0-g7M"/>
@@ -2048,7 +2048,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nota :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iP1-oi-dsK">
-                                                    <rect key="frame" x="76" y="67" width="55" height="21"/>
+                                                    <rect key="frame" x="82" y="67" width="55" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="55" id="Di0-fH-KeE"/>
                                                         <constraint firstAttribute="height" constant="21" id="IE6-H4-fO4"/>
@@ -2058,7 +2058,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W09-X2-lOd">
-                                                    <rect key="frame" x="71" y="4" width="252" height="37"/>
+                                                    <rect key="frame" x="77" y="4" width="252" height="37"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="37" id="0y2-nL-cVP"/>
                                                         <constraint firstAttribute="width" constant="252" id="OtR-Bt-bZC"/>
@@ -2067,7 +2067,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9C7-kh-Ye7">
-                                                    <rect key="frame" x="71" y="33" width="252" height="36"/>
+                                                    <rect key="frame" x="77" y="33" width="252" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="Peh-kq-Yr8"/>
                                                         <constraint firstAttribute="width" constant="252" id="w7o-fu-tCH"/>
@@ -2086,8 +2086,8 @@
                                                 <constraint firstItem="iP1-oi-dsK" firstAttribute="leading" secondItem="chE-E3-RFX" secondAttribute="trailing" constant="8" id="bAJ-Tj-NYy"/>
                                                 <constraint firstItem="chE-E3-RFX" firstAttribute="top" secondItem="W09-X2-lOd" secondAttribute="bottom" constant="-27" id="eXu-Ro-D7A"/>
                                                 <constraint firstItem="9C7-kh-Ye7" firstAttribute="top" secondItem="W09-X2-lOd" secondAttribute="bottom" constant="-8" id="f9H-oa-C5m"/>
-                                                <constraint firstItem="W09-X2-lOd" firstAttribute="leading" secondItem="RcP-LQ-8zd" secondAttribute="leadingMargin" constant="63" id="hIp-yg-Oa2"/>
-                                                <constraint firstItem="9C7-kh-Ye7" firstAttribute="leading" secondItem="RcP-LQ-8zd" secondAttribute="leadingMargin" constant="63" id="mph-pN-s47"/>
+                                                <constraint firstItem="W09-X2-lOd" firstAttribute="leading" secondItem="RcP-LQ-8zd" secondAttribute="leadingMargin" constant="69" id="hIp-yg-Oa2"/>
+                                                <constraint firstItem="9C7-kh-Ye7" firstAttribute="leading" secondItem="RcP-LQ-8zd" secondAttribute="leadingMargin" constant="69" id="mph-pN-s47"/>
                                                 <constraint firstItem="eiP-m5-Be7" firstAttribute="leading" secondItem="iP1-oi-dsK" secondAttribute="trailing" constant="3" id="x0Y-J7-TCt"/>
                                             </constraints>
                                         </tableViewCellContentView>

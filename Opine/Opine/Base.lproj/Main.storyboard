@@ -1832,26 +1832,11 @@
                                             <action selector="btnChangePasswordTapped:" destination="Y3Y-Ys-NOz" eventType="touchUpInside" id="s79-e4-nVV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FC6-gd-ayo">
-                                        <rect key="frame" x="125" y="177" width="112" height="19"/>
-                                        <color key="backgroundColor" red="0.54901963470000004" green="0.86666673419999996" blue="0.87450987099999999" alpha="1" colorSpace="deviceRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="19" id="999-xv-RZV"/>
-                                            <constraint firstAttribute="width" constant="112" id="Tmo-he-xxP"/>
-                                        </constraints>
-                                        <state key="normal" title="Trocar foto">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnChangePhotoTapped:" destination="Y3Y-Ys-NOz" eventType="touchUpInside" id="d2P-Xi-zvb"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgProfile.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="HCX-F2-lEo">
-                                        <rect key="frame" x="19" y="92" width="98" height="104"/>
+                                        <rect key="frame" x="19" y="92" width="104" height="104"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="104" id="90K-dG-IVQ"/>
-                                            <constraint firstAttribute="width" constant="98" id="WKz-ch-pDi"/>
+                                            <constraint firstAttribute="width" constant="104" id="WKz-ch-pDi"/>
                                         </constraints>
                                     </imageView>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nova Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFM-8z-Ukv">
@@ -1871,6 +1856,27 @@
                                             <outlet property="delegate" destination="Y3Y-Ys-NOz" id="elz-8k-tbz"/>
                                         </connections>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FC6-gd-ayo">
+                                        <rect key="frame" x="131" y="176" width="112" height="20"/>
+                                        <color key="backgroundColor" red="0.54901963470000004" green="0.86666673419999996" blue="0.87450987099999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="999-xv-RZV"/>
+                                            <constraint firstAttribute="width" constant="112" id="Tmo-he-xxP"/>
+                                        </constraints>
+                                        <state key="normal" title="Trocar foto">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnChangePhotoTapped:" destination="Y3Y-Ys-NOz" eventType="touchUpInside" id="d2P-Xi-zvb"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(100px X 100px)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eec-ud-qHn">
+                                        <rect key="frame" x="131" y="154" width="112" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23529413339999999" green="0.75686281919999998" blue="0.78431379800000001" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
@@ -1887,7 +1893,7 @@
                                     <constraint firstItem="HCX-F2-lEo" firstAttribute="leading" secondItem="MuI-gx-gUi" secondAttribute="leading" constant="19" id="Slv-gS-Gbc"/>
                                     <constraint firstItem="UiI-An-wcB" firstAttribute="top" secondItem="HCX-F2-lEo" secondAttribute="bottom" constant="8" symbolic="YES" id="ZN7-Cv-0Vx"/>
                                     <constraint firstItem="n1n-xu-IAb" firstAttribute="top" secondItem="MuI-gx-gUi" secondAttribute="top" constant="25" id="cL0-JO-0ID"/>
-                                    <constraint firstItem="FC6-gd-ayo" firstAttribute="top" secondItem="ZHg-XL-dZt" secondAttribute="bottom" constant="93" id="fF4-P1-vho"/>
+                                    <constraint firstItem="FC6-gd-ayo" firstAttribute="top" secondItem="ZHg-XL-dZt" secondAttribute="bottom" constant="92" id="fF4-P1-vho"/>
                                     <constraint firstItem="n1n-xu-IAb" firstAttribute="leading" secondItem="MuI-gx-gUi" secondAttribute="leading" constant="19" id="m9g-YX-TxW"/>
                                     <constraint firstItem="UiI-An-wcB" firstAttribute="leading" secondItem="SCd-H2-Ktl" secondAttribute="leading" id="qwc-L4-JMv"/>
                                     <constraint firstItem="UiI-An-wcB" firstAttribute="leading" secondItem="IFM-8z-Ukv" secondAttribute="leading" id="uLO-Vi-s29"/>
